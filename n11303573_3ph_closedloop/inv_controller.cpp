@@ -1,11 +1,9 @@
-// Automatically generated C++ file on Fri May  2 09:51:57 2025
+// Automatically generated C++ file on Thu Aug 14 17:37:36 2025
 //
 // To build with Digital Mars C++ Compiler:
 //
 //    dmc -mn -WD inv_controller.cpp kernel32.lib
-
-#include <malloc.h>
-#include <math.h>
+#include <cmath>
 
 union uData
 {
@@ -28,14 +26,6 @@ union uData
 // See https://docs.microsoft.com/en-us/windows/win32/dlls/dllmain for more information.
 int __stdcall DllMain(void *module, unsigned int reason, void *reserved) { return 1; }
 
-void bzero(void *ptr, unsigned int count)
-{
-   unsigned char *first = (unsigned char *) ptr;
-   unsigned char *last  = first + count;
-   while(first < last)
-      *first++ = '\0';
-}
-
 // #undef pin names lest they collide with names in any header file(s) you might include.
 #undef p1a
 #undef p1b
@@ -43,202 +33,101 @@ void bzero(void *ptr, unsigned int count)
 #undef p2b
 #undef p3a
 #undef p3b
+#undef c
+#undef b
+#undef a
 #undef CLK
 
-struct pwm_var
-{
-   double t_prev;
+static bool clk_state = false; // Initialize clk_state correctly
+float clock_freq = 88000.0; // TODO: FIX HARDCODE
 
-   double ttol_var;
-   int    state_change;
+struct PwmLeg {
+   double carrier_period; // Triangle wave period
+   double gain;           // Scaling gain
+   double offset;         // phase shift or m3 offset
+   double amplitude;      // amplitude
+   double time;           // sim time
 
-   double mcu_trig;
-   int    mcu_trig_count;
+   //generate PWM high/low signals for a leg
+   void step(double reference, double *pa, double *pb){
 
-   double maxstep;
+      //generate triangle carrier
+      double t_mod = fmod(time, carrier_period);
+      double carrier = triangle_wave(t_mod);
 
-   double p1on; // rise times
-   double p2on;
-   double p3on;
-
-   double p1off; // fall times
-   double p2off;
-   double p3off;
-
-   double p1out; // output states
-   double p2out;
-   double p3out;
-
-   double p1dly; // deadtimes
-   double p2dly;
-   double p3dly;
-
-   double p1dt;
-   double p2dt;
-   double p3dt;
-};
-
-struct sINV_CONTROLLER
-{
-   // declare the structure here
-
-   struct pwm_var pwm_data;
-};
-
-#define TTOL_VAL        10E-9
-#define PWM_PEAK        4166
-#define MCU_CLK_PRD     1E-8
-#define SAMPLING_PRD    2*PWM_PEAK*MCU_CLK_PRD
-
-#define PWM_A_ON_OFF_CALC(OFF,ON, TNOW, DUTY, PRD_PEAK, PRD_VAL, CLK_PRD_VAL)   \
-   if(DUTY <= 0.5){OFF = TNOW; ON = TNOW + 1;}                \
-   else if(DUTY >= (PRD_PEAK - 0.5)){ON = TNOW + PRD_VAL/2; OFF = TNOW + 1;}  \
-   else{OFF = TNOW + DUTY*CLK_PRD_VAL; ON = TNOW + PRD_VAL - DUTY*CLK_PRD_VAL;}
-        /* OFF will be triggered on next period, ON wont be triggered */
-        /* ON will be triggered on half period, OFF wont be triggered */
-        /* Normal duty timing */
-
-#define PWM_B_ON_OFF_CALC(OFF,ON, TNOW, DUTY, PRD_PEAK, PRD_VAL, CLK_PRD_VAL)   \
-   if(DUTY <= 0.5){ON = TNOW; OFF = TNOW + 1;}                \
-   else if(DUTY >= (PRD_PEAK - 0.5)){OFF = TNOW + PRD_VAL/2; ON = TNOW + 1;}  \
-   else{OFF = TNOW + PRD_VAL - DUTY*CLK_PRD_VAL; ON = TNOW + DUTY*CLK_PRD_VAL;}
-        /* ON will be triggered on next period, OFF wont be triggered */
-        /* OFF will be triggered on half period, ON wont be triggered */
-        /* Normal duty timing with reverted logic*/
-
-#define PWM_C_ON_OFF_CALC(OFF, ON, TNOW, CMD_OFF, CMD_ON, CLK_PRD_VAL) \
-   OFF = TNOW + CMD_OFF*CLK_PRD_VAL;                                 \
-   ON  = TNOW + CMD_ON*CLK_PRD_VAL;
-
-#define TRIGGER(TPREV,TNOW,TRIG_ON, TRIG_OFF,STATE_VAR)        \
-   if((TPREV <= TRIG_ON)&&(TNOW >= TRIG_ON)) STATE_VAR = 1;    \
-   if((TPREV <= TRIG_OFF)&&(TNOW >= TRIG_OFF)) STATE_VAR = 0;
-
-#define DEADTIME(STATE_VAR_PREV, STATE_VAR, TPREV, TNOW, DELAY, DT, DELAY_VAR)  \
-   if(STATE_VAR_PREV != STATE_VAR) DELAY = TNOW + DT;                     \
-   if((TPREV <= DELAY)&&(TNOW >= DELAY)) DELAY_VAR = STATE_VAR;
-
-#define PWM_OUTPUT(OUTA, OUTB, STATE_VAR, DELAY_VAR, TEMP, STATE_CHANGE, EN)    \
-   TEMP = OUTA;                                             \
-   OUTA = STATE_VAR*DELAY_VAR*EN;                           \
-   if(TEMP != OUTA) STATE_CHANGE = 1;                       \
-   TEMP = OUTB;                                             \
-   OUTB = (1 - STATE_VAR)*(1 - DELAY_VAR)*EN;               \
-   if(TEMP != OUTB) STATE_CHANGE = 1;
-
-
-extern "C" __declspec(dllexport) void inv_controller(struct sINV_CONTROLLER **opaque, double t, union uData *data)
-{
-   double dtime = data[0].d;
-   double &p1a  = data[1].d; // output
-   double &p1b  = data[2].d; // output
-   double &p2a  = data[3].d; // output
-   double &p2b  = data[4].d; // output
-   double &p3a  = data[5].d; // output
-   double &p3b  = data[6].d; // output
-   double &CLK  = data[7].d; // output
-
-   if(!*opaque)
-   {
-      *opaque = (struct sINV_CONTROLLER *) malloc(sizeof(struct sINV_CONTROLLER));
-      bzero(*opaque, sizeof(struct sINV_CONTROLLER));
+      //compare ref against carrier and set PWM outputs
+      if (reference >= carrier){
+         *pa = 1;
+         *pb = 0;
+      } else{
+         *pa = 0;
+         *pb = 1;
+      }
+      time += 1/clock_freq; // incrememt timestep with each clock cycle
    }
-   struct sINV_CONTROLLER *inst = *opaque;
+
+   // use SPWM
+   static double triangle_wave(double t){
+      double phase = fmod(t, 1.0);
+      return (phase < 0.5) ? phase * 2.0 : 2.0 - phase * 2.0;
+   }
+
+
+};
+
+extern "C" __declspec(dllexport) void inv_controller(void **opaque, double t, union uData *data)
+{
+   double  c     = data[ 0].d; // input
+   double  b     = data[ 1].d; // input
+   double  a     = data[ 2].d; // input
+   double  CLK   = data[ 3].d; // input
+   double  dtime = data[ 4].d; // input parameter
+   double  Fsw   = data[ 5].d; // input parameter
+   double &p1a   = data[ 6].d; // output
+   double &p1b   = data[ 7].d; // output
+   double &p2a   = data[ 8].d; // output
+   double &p2b   = data[ 9].d; // output
+   double &p3a   = data[10].d; // output
+   double &p3b   = data[11].d; // output
 
 // Implement module evaluation code here:
-   inst->pwm_data.state_change = 0;
 
-   if((t >= inst->pwm_data.mcu_trig)&&(inst->pwm_data.t_prev <= inst->pwm_data.mcu_trig))
-   {
-      if(inst->pwm_data.mcu_trig_count >= 3)
-      {
-         inst->pwm_data.mcu_trig_count = 0;
 
-         // calculate future discrete time PWM discontinuity event
-         double duty1 = 4166/2 + 2000*sin(2*3.141592*50*t);
-         double duty2 = 4166/2 + 2000*sin(2*3.141592*50*t + 2*3.141592/3);
-         double duty3 = 4166/2 + 2000*sin(2*3.141592*50*t + 4*3.141592/3);
+   float period = 1/Fsw;
+   float pi = 3.141592654;
+   float phase_shift  =(2*pi)/3;
+   float L_phase_shift = 0; //testing
 
-         PWM_A_ON_OFF_CALC(inst->pwm_data.p1off, inst->pwm_data.p1on, t, duty1, PWM_PEAK, SAMPLING_PRD, MCU_CLK_PRD)
-         PWM_A_ON_OFF_CALC(inst->pwm_data.p2off, inst->pwm_data.p2on, t, duty2, PWM_PEAK, SAMPLING_PRD, MCU_CLK_PRD)
-         PWM_A_ON_OFF_CALC(inst->pwm_data.p3off, inst->pwm_data.p3on, t, duty3, PWM_PEAK, SAMPLING_PRD, MCU_CLK_PRD)
-      }
-      else
-      {
-         if(inst->pwm_data.mcu_trig_count >= 2)
-         {
+   PwmLeg PWM_LEGA;
+   PWM_LEGA.carrier_period = period;
+   PWM_LEGA.gain = 1.0;
+   PWM_LEGA.offset = 0.0+L_phase_shift;
+   PWM_LEGA.amplitude = 1.0;
+   PWM_LEGA.time = 0.0;
 
-         }
-         else
-         {
-            if(inst->pwm_data.mcu_trig_count >= 1)
-            {
 
-            }
-            else
-            {
+   PwmLeg PWM_LEGB;
+   PWM_LEGB.carrier_period = period;
+   PWM_LEGB.gain = 1.0;
+   PWM_LEGB.offset = phase_shift;
+   PWM_LEGB.amplitude = 1.0;
+   PWM_LEGB.time = 0.0;
 
-            }
-         }
-         inst->pwm_data.mcu_trig_count += 1;
-      }
+   PwmLeg PWM_LEGC;
+   PWM_LEGC.carrier_period = period;
+   PWM_LEGC.gain = 1.0;
+   PWM_LEGC.offset = 2*phase_shift;
+   PWM_LEGC.amplitude = 1.0;
+   PWM_LEGC.time = 0.0;
 
-      inst->pwm_data.mcu_trig += SAMPLING_PRD/4;
-   }
 
-   double p1out_prev = inst->pwm_data.p1out;
-   double p2out_prev = inst->pwm_data.p2out;
-   double p3out_prev = inst->pwm_data.p3out;
+   if (CLK == false || CLK == clk_state) goto end;
 
-   double p1dt_prev = inst->pwm_data.p1dt;
-   double p2dt_prev = inst->pwm_data.p2dt;
-   double p3dt_prev = inst->pwm_data.p3dt;
+   PWM_LEGA.step(a, &p1a, &p1b);
+   PWM_LEGB.step(b, &p2a, &p2b);
+   PWM_LEGC.step(c, &p3a, &p3b);
 
-   TRIGGER(inst->pwm_data.t_prev, t, inst->pwm_data.p1on, inst->pwm_data.p1off,inst->pwm_data.p1out)
-   TRIGGER(inst->pwm_data.t_prev, t, inst->pwm_data.p2on, inst->pwm_data.p2off,inst->pwm_data.p2out)
-   TRIGGER(inst->pwm_data.t_prev, t, inst->pwm_data.p3on, inst->pwm_data.p3off,inst->pwm_data.p3out)
+   end:
+      clk_state = CLK;
 
-   DEADTIME(p1out_prev, inst->pwm_data.p1out, inst->pwm_data.t_prev, t, inst->pwm_data.p1dly, dtime, inst->pwm_data.p1dt)
-   DEADTIME(p2out_prev, inst->pwm_data.p2out, inst->pwm_data.t_prev, t, inst->pwm_data.p2dly, dtime, inst->pwm_data.p2dt)
-   DEADTIME(p3out_prev, inst->pwm_data.p3out, inst->pwm_data.t_prev, t, inst->pwm_data.p3dly, dtime, inst->pwm_data.p3dt)
-
-   double temp = 0;
-   PWM_OUTPUT(p1a, p1b, inst->pwm_data.p1out, inst->pwm_data.p1dt, temp, inst->pwm_data.state_change, 1)
-   PWM_OUTPUT(p2a, p2b, inst->pwm_data.p2out, inst->pwm_data.p2dt, temp, inst->pwm_data.state_change, 1)
-   PWM_OUTPUT(p3a, p3b, inst->pwm_data.p3out, inst->pwm_data.p3dt, temp, inst->pwm_data.state_change, 1)
-
-   inst->pwm_data.t_prev = t;
-
-   CLK = inst->pwm_data.mcu_trig_count;
-}
-
-#define MAXSTEP_CALC(X) if(inst->pwm_data.t_prev < X){if(maxstep > (X - inst->pwm_data.t_prev)){maxstep = X - inst->pwm_data.t_prev;}}
-extern "C" __declspec(dllexport) double MaxExtStepSize(struct sINV_CONTROLLER *inst, double t)
-{
-   double maxstep = 0;
-   maxstep = SAMPLING_PRD;
-
-   MAXSTEP_CALC(inst->pwm_data.mcu_trig)
-
-   MAXSTEP_CALC(inst->pwm_data.p1on)
-   MAXSTEP_CALC(inst->pwm_data.p1off)
-   MAXSTEP_CALC(inst->pwm_data.p1dly)
-   MAXSTEP_CALC(inst->pwm_data.p2on)
-   MAXSTEP_CALC(inst->pwm_data.p2off)
-   MAXSTEP_CALC(inst->pwm_data.p2dly)
-   MAXSTEP_CALC(inst->pwm_data.p3on)
-   MAXSTEP_CALC(inst->pwm_data.p3off)
-   MAXSTEP_CALC(inst->pwm_data.p3dly)
-
-   return maxstep;
-}
-
-extern "C" __declspec(dllexport) void Trunc(struct sINV_CONTROLLER *inst, double t, union uData *data, double *timestep)
-{
-   if(inst->pwm_data.state_change)*timestep = TTOL_VAL;
-}
-
-extern "C" __declspec(dllexport) void Destroy(struct sINV_CONTROLLER *inst)
-{
-   free(inst);
 }
