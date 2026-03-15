@@ -6,7 +6,18 @@
 
 /* USER FUNC DEFS */
 
-static void iclarke(const double alpha, const double beta, double *a, double *b, double * c);
+#include <math.h>
+
+/* Clarke constants */
+#define SQRT2        1.41421356237f
+#define SQRT3        1.73205080757f
+#define SQRT6        2.44948974278f
+
+#define K1   (SQRT2 * SQRT3 / 3.0f)   // v6 / 3
+#define K2   (SQRT6 / 6.0f)
+#define K3   (SQRT2 / 2.0f)
+
+void iclarke(const double alpha, const double beta, double *a, double *b, double * c);
 
 union uData
 {
@@ -59,16 +70,11 @@ extern "C" __declspec(dllexport) void iclarke_x1(void **opaque, double t, union 
 }
 
 
-/*  reduced inverse clarke transform: taken from foc.c */
+void iclarke(const double alpha, const double beta, double *a, double *b, double * c)
+{
+    *a = K1 * alpha;
 
-static void iclarke(const double alpha, const double beta, double *a, double *b, double * c){
+    *b = K3 * beta - K2 * alpha;
 
-  const double sqrt3_over_two = 0.866025404f;
-
-  const double tmp1 = -0.5f * alpha;
-  const double tmp2 = sqrt3_over_two * beta;
-
-  *a = alpha;
-  *b = tmp1 + tmp2;
-  *c = tmp1 - tmp2;
+    *c = -K2 * alpha - K3 * beta;
 }

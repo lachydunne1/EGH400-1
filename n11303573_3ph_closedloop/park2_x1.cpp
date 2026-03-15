@@ -41,7 +41,7 @@ int __stdcall DllMain(void *module, unsigned int reason, void *reserved) { retur
 #undef CLK
 #undef theta
 
-extern "C" __declspec(dllexport) void park_x1(void **opaque, double t, union uData *data)
+extern "C" __declspec(dllexport) void park2_x1(void **opaque, double t, union uData *data)
 {
    double  alpha = data[0].d; // input
    double  beta  = data[1].d; // input
@@ -50,14 +50,9 @@ extern "C" __declspec(dllexport) void park_x1(void **opaque, double t, union uDa
    double &d     = data[4].d; // output
    double &q     = data[5].d; // output
 
-// Implement module evaluation code here:
-   if (CLK == false || CLK == clk_state) goto end;
-
    // will execute on rising/falling edge, generating clock frequency
    park(alpha, beta, theta, &d, &q);
 
-   end:
-      clk_state = CLK;
 }
 
 static void park(double alpha, double beta, double angle_rad_0to2pi,double * d_out, double * q_out){
@@ -66,10 +61,10 @@ static void park(double alpha, double beta, double angle_rad_0to2pi,double * d_o
   const float c = cosf(angle_rad_0to2pi);
 
   *d_out =  c * alpha + s * beta;
-  *q_out =  s * alpha - c * beta; //prevent latching to negative sequence, why does this work???
+  *q_out = - s * alpha + c * beta;
 
-  if (*q_out > 6.283185){
-      *q_out = 6.283185;
+   if (*q_out > 6.283185){
+     *q_out = 6.283185;
    } else if (*q_out < 0){
       *q_out = 0;
    }

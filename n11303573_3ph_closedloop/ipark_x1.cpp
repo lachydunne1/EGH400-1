@@ -47,14 +47,11 @@ extern "C" __declspec(dllexport) void ipark_x1(void **opaque, double t, union uD
    double &alpha = data[4].d; // output
    double &beta  = data[5].d; // output
 
-// Implement module evaluation code here:
-   if (CLK == false || CLK == clk_state) goto end;
+
 
    // will execute on rising/falling edge, generating clock frequency
    ipark(d, q, theta, &alpha, &beta);
 
-   end:
-      clk_state = CLK;
 
 }
 

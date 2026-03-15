@@ -5,8 +5,20 @@
 //    dmc -mn -WD clark_transform_x1.cpp kernel32.lib
 
 /* USER FUNCTION DEFS */
+#include <math.h>
 
-static void clarke(double a, double b, double c, double *alpha, double *beta);
+#include <math.h>
+
+/* Clarke constants */
+#define SQRT2        1.41421356237f
+#define SQRT3        1.73205080757f
+#define SQRT6        2.44948974278f
+
+#define K1   (SQRT2 * SQRT3 / 3.0f)   // v6 / 3
+#define K2   (SQRT6 / 6.0f)
+#define K3   (SQRT2 / 2.0f)
+
+void clarke(double a, double b, double c, double *alpha, double *beta);
 
 union uData
 {
@@ -37,7 +49,7 @@ int __stdcall DllMain(void *module, unsigned int reason, void *reserved) { retur
 #undef c
 #undef CLK
 
-static bool clk_state = false; // Initialize clk_state correctly
+static bool clk_state = true; // Initialize clk_state correctly
 static bool FOC_FULL_CLARKE = false; // Used to MAINTAIN FULL SCALE OF INPUT OVER TRANSFORMS
 
 // method called by Qspice once DLL is loaded
@@ -67,17 +79,9 @@ end:
 //       to be important for torque / flux control.
 //
 
-static void clarke(double a, double b, double c, double *alpha, double *beta){
-  (void) c;
-  const double one_over_sqrt3 = 0.577350269f;
-   // dereference pointer to change value. No need to return alpha, beta.
-  if (FOC_FULL_CLARKE == true){
-      const float k = 2.0f/3.0f;
-      *alpha = k * a - (k/2.0f) * b - (k /2.0f) * c; //test
-      *beta = one_over_sqrt3 * (b-c);
-  } else {
-      *alpha = a;
-      *beta = one_over_sqrt3 * a + 2.0f * one_over_sqrt3 * b;
-   }
 
+void clarke(double a, double b, double c, double *alpha, double *beta)
+{
+    *alpha = K1 * a - K2 * b - K2 * c;
+    *beta  = K3 * b - K3 * c;
 }
