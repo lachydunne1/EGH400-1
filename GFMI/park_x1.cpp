@@ -51,13 +51,11 @@ extern "C" __declspec(dllexport) void park_x1(void **opaque, double t, union uDa
    double &q     = data[5].d; // output
 
 // Implement module evaluation code here:
-   if (CLK == false || CLK == clk_state) goto end;
 
    // will execute on rising/falling edge, generating clock frequency
    park(alpha, beta, theta, &d, &q);
 
-   end:
-      clk_state = CLK;
+
 }
 
 static void park(double alpha, double beta, double angle_rad_0to2pi,double * d_out, double * q_out){

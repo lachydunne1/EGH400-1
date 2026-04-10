@@ -52,7 +52,7 @@ extern "C" __declspec(dllexport) void pq_dq_measure_x1(void **opaque, double t, 
 
 // Calculate instantaneous power output using P-Q theory (H. Akagi, Instantaneous Power Theory App., p 71)
 static void calculate_pq_dq_power(double Vd, double Vq, double Id, double Iq, double * P, double * Q){
-   *P = 1.5 * (Vd*Id + Vq*Iq);
-   *Q = 1.5 * (Vq*Id - Vd*Iq);
+   *P =  (Vd*Id + Vq*Iq);
+   *Q =  (Vq*Id - Vd*Iq);
 
 }
