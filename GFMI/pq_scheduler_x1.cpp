@@ -33,7 +33,7 @@ int __stdcall DllMain(void *module, unsigned int reason, void *reserved) { retur
 #undef P
 #undef Q
 
-double sqrt_3 = 1.73205;
+double sqrt_3 = 1.73;
 double P_current = 0.0;
 double Q_current = 0.0;
 
