@@ -36,7 +36,10 @@ This thesis project aims to serve as a foundational model for development of gri
 
 ### Grid-Forming:
 
-<img width="1528" height="459" alt="Three_Phi" src="https://github.com/user-attachments/assets/455e4e55-a5ee-4046-9f8a-cd1bc3ed555d" />
+<img width="1468" height="936" alt="GFMI" src="https://github.com/user-attachments/assets/97d82a32-e307-4de6-9c72-fcf708e823b6" />
+
+
+
 
 
 
