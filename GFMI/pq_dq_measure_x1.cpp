@@ -3,9 +3,13 @@
 // To build with Digital Mars C++ Compiler:
 //
 //    dmc -mn -WD pq_dq_measure_x1.cpp kernel32.lib
-static void calculate_pq_dq_power(double Vd, double Vq, double Id, double Iq, double * P, double * Q);
+#include <cmath>
+
+static void calculate_pq_dq_power_amplitude_invariant(double Vd, double Vq, double Id, double Iq, double * P, double * Q);
+static void calculate_pq_dq_power_power_invariant(double Vd, double Vq, double Id, double Iq, double * P, double * Q);
 
 float sqrt_3 =1.73; //scale slightly to compensate to voltage drops
+static bool clk_state = false; // Initialize clk_state correctly
 
 union uData
 {
@@ -47,14 +51,25 @@ extern "C" __declspec(dllexport) void pq_dq_measure_x1(void **opaque, double t, 
    double &P   = data[5].d; // output
    double &Q   = data[6].d; // output
 
-// Implement module evaluation code here:
- calculate_pq_dq_power(Vd,Vq, Id, Iq, &P, &Q);
+   // if the clock is low, and previous state was high do not execute code.
+   // if the clock is high, and previous state was low execute code.
+   // (rising edge)
+   if (!CLK && clk_state) goto end;
+      calculate_pq_dq_power_amplitude_invariant(Vd,Vq, Id, Iq, &P, &Q);
+   end:
+      clk_state = CLK;
 }
 
 
-// Calculate instantaneous power output using P-Q theory (H. Akagi, Instantaneous Power Theory App., p 71)
-static void calculate_pq_dq_power(double Vd, double Vq, double Id, double Iq, double * P, double * Q){
-   *P =  sqrt_3*(Vd*Id + Vq*Iq);
-   *Q =  sqrt_3*(Vq*Id - Vd*Iq);
+// Calculate P-Q power references with this function is amplitude-invariant clarke is used
+static void calculate_pq_dq_power_amplitude_invariant(double Vd, double Vq, double Id, double Iq, double * P, double * Q){
+   *P = 1.5*(Vd*Id + Vq*Iq);
+   *Q = 1.5*(Vq*Id - Vd*Iq);
 
+}
+
+// Calculate P-Q power references with this function is power-invariant clarke is used
+static void calculate_pq_dq_power_power_invariant(double Vd, double Vq, double Id, double Iq, double * P, double * Q){
+   *P = (Vd*Id + Vq*Iq);
+   *Q = (Vq*Id - Vd*Iq);
 }

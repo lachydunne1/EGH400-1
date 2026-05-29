@@ -1,5 +1,5 @@
 ÿØÿÛ«schematic
-  «component (-5100,-3400) 0 0
+  «component (-4700,-3300) 0 0
     «symbol
       «type: Ø(.DLL)»
       «shorted pins: false»
@@ -15,23 +15,24 @@
       «pin (-800,-400) (200,0) 1 14 145 0x0 -1 "theta"»
     »
   »
-  «component (-7500,-3400) 0 0
+  «component (-8100,-3300) 0 0
     «symbol
       «type: Ø(.DLL)»
       «shorted pins: false»
       «rect (-800,700) (800,-700) 0 0 0 0x4000000 0x4000000 -1 1 -1»
-      «text (0,-550) 1 12 0 0x1000000 -1 -1 "X9"»
-      «text (0,-350) 0.681 13 0 0x1000000 -1 -1 "clark_transform_X1"»
+      «text (-50,-150) 1 12 0 0x1000000 -1 -1 "X9"»
+      «text (-50,-250) 0.681 13 0 0x1000000 -1 -1 "clark_transform_X1"»
       «pin (800,300) (-200,0) 1 14 146 0x0 -1 "alpha"»
       «pin (800,-100) (0,0) 1 11 146 0x0 -1 "beta"»
       «pin (-800,400) (0,0) 1 7 145 0x0 -1 "a"»
       «pin (-800,0) (50,0) 1 14 145 0x0 -1 "b"»
       «pin (-800,-300) (50,50) 1 7 145 0x0 -1 "c"»
       «pin (-500,-700) (0,0) 1 14 145 0x0 -1 "CLK"»
-      «pin (300,-700) (0,0) 1 14 3 0x0 -1 "GND"»
+      «pin (-100,-700) (0,0) 1 14 3 0x0 -1 "GND"»
+      «pin (800,-500) (-300,-50) 1 14 146 0x0 -1 "gamma"»
     »
   »
-  «component (1400,-3500) 0 0
+  «component (900,-3400) 0 0
     «symbol B1
       «type: B»
       «description: Behavioral Voltage Source»
@@ -43,12 +44,12 @@
       «rect (-25,-73) (25,-77) 0 0 0 0x1000000 0x3000000 -1 0 -1»
       «ellipse (-130,130) (130,-130) 0 0 0 0x1000000 0x1000000 -1 -1»
       «text (100,150) 1 7 0 0x1000000 -1 -1 "B3"»
-      «text (-850,-400) 1 7 0 0x1000000 -1 -1 "V=V(w_PI_ctrl) + v(wgrid)"»
+      «text (-850,-400) 1 7 0 0x1000000 -1 -1 "V=V(w_PI_ctrl) + v(w_grid)"»
       «pin (0,200) (0,0) 1 0 0 0x0 -1 "+"»
       «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
     »
   »
-  «component (2800,-3000) 0 0
+  «component (2300,-2900) 0 0
     «symbol Integrator
       «type: X»
       «description: Integrator with RESET»
@@ -68,7 +69,7 @@
       «pin (300,0) (0,0) 1 0 0 0x0 -1 "out"»
     »
   »
-  «component (4000,-3500) 0 0
+  «component (3500,-3400) 0 0
     «symbol R
       «type: R»
       «description: Resistor(USA Style Symbol)»
@@ -82,7 +83,7 @@
       «pin (0,-200) (0,0) 1 0 0 0x0 -1 "2"»
     »
   »
-  «component (1700,-2100) 0 0
+  «component (-3200,7900) 0 0
     «symbol V
       «type: V»
       «description: Independent Voltage Source»
@@ -99,7 +100,7 @@
       «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
     »
   »
-  «component (-800,-4200) 0 0
+  «component (-1300,-3300) 0 0
     «symbol pid_controller
       «type: Ø(.DLL)»
       «shorted pins: false»
@@ -107,8 +108,8 @@
       «triangle (-600,-450) (-550,-500) (-600,-550) 0 0 0x1000000 0x2000000 -1 -1»
       «text (0,450) 1 12 0 0x1000000 -1 -1 "X11"»
       «text (0,300) 0.681 13 0 0x1000000 -1 -1 "PID_Controller"»
-      «text (-300,50) 0.681 7 0 0x1000000 -1 -1 "double Kp=<4>"»
-      «text (-300,-60) 0.681 7 0 0x1000000 -1 -1 "double Ki=<1>"»
+      «text (-300,50) 0.681 7 0 0x1000000 -1 -1 "double Kp=<-20>"»
+      «text (-300,-60) 0.681 7 0 0x1000000 -1 -1 "double Ki=<-1>"»
       «text (-300,-180) 0.681 7 0 0x1000000 -1 -1 "double Kd=<0>"»
       «text (-300,-310) 0.681 7 0 0x1000000 -1 -1 "double Kv=<1>"»
       «text (-300,-430) 0.681 7 0 0x1000000 -1 -1 "bool Itype=<1>"»
@@ -116,10 +117,10 @@
       «pin (-600,500) (50,0) 1 7 145 0x0 -1 "setpt"»
       «pin (600,500) (-40,0) 1 11 146 0x0 -1 "ctrl"»
       «pin (-600,-500) (60,0) 1 7 17 0x0 -1 "clk"»
-      «pin (-600,0) (50,0) 1 7 145 0x0 -1 "fb"»
+      «pin (-600,-100) (50,0) 1 7 145 0x0 -1 "fb"»
     »
   »
-  «component (2600,-3900) 0 0
+  «component (2100,-3800) 0 0
     «symbol B1
       «type: B»
       «description: Behavioral Voltage Source»
@@ -136,7 +137,7 @@
       «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
     »
   »
-  «component (-1700,-8300) 0 0
+  «component (-1700,-7300) 0 0
     «symbol
       «type: Ø(.DLL)»
       «shorted pins: false»
@@ -152,23 +153,7 @@
       «pin (-800,-400) (200,0) 1 14 145 0x0 -1 "theta"»
     »
   »
-  «component (-4700,-8300) 0 0
-    «symbol
-      «type: Ø(.DLL)»
-      «shorted pins: false»
-      «rect (-800,700) (800,-700) 0 0 0 0x4000000 0x4000000 -1 1 -1»
-      «text (0,-550) 1 12 0 0x1000000 -1 -1 "X3"»
-      «text (0,-350) 0.681 13 0 0x1000000 -1 -1 "clark_transform_X1"»
-      «pin (800,300) (-200,0) 1 14 146 0x0 -1 "alpha"»
-      «pin (800,-100) (0,0) 1 11 146 0x0 -1 "beta"»
-      «pin (-800,400) (0,0) 1 7 145 0x0 -1 "a"»
-      «pin (-800,0) (50,-50) 1 14 145 0x0 -1 "b"»
-      «pin (-800,-300) (0,0) 1 7 145 0x0 -1 "c"»
-      «pin (-500,-700) (0,0) 1 14 145 0x0 -1 "CLK"»
-      «pin (300,-700) (0,0) 1 14 3 0x0 -1 "GND"»
-    »
-  »
-  «component (1800,-8800) 0 0
+  «component (1500,-7800) 0 0
     «symbol
       «type: Ø(.DLL)»
       «shorted pins: false»
@@ -185,7 +170,7 @@
       «pin (300,-600) (0,50) 1 14 3 0x0 -1 "GND"»
     »
   »
-  «component (-2000,7700) 0 0
+  «component (-9900,-5200) 0 0
     «symbol V
       «type: V»
       «description: Independent Voltage Source»
@@ -202,7 +187,7 @@
       «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
     »
   »
-  «component (-10600,-8300) 0 0
+  «component (-10600,-7300) 0 0
     «symbol B1
       «type: B»
       «description: Behavioral Voltage Source»
@@ -219,7 +204,7 @@
       «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
     »
   »
-  «component (-9900,-8300) 0 0
+  «component (-9900,-7300) 0 0
     «symbol B1
       «type: B»
       «description: Behavioral Voltage Source»
@@ -236,7 +221,7 @@
       «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
     »
   »
-  «component (-9300,-8300) 0 0
+  «component (-9300,-7300) 0 0
     «symbol B1
       «type: B»
       «description: Behavioral Voltage Source»
@@ -253,49 +238,7 @@
       «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
     »
   »
-  «component (6500,4700) 0 0
-    «symbol
-      «type: Ø(.DLL)»
-      «shorted pins: false»
-      «rect (200,3000) (1900,800) 0 0 0 0x4000000 0x4000000 -1 1 -1»
-      «text (750,2650) 1 12 0 0x1000000 -1 -1 "X12"»
-      «text (303,2411) 0.681 7 0 0x1000000 -1 -1 "SPWM_controller_debug"»
-      «text (250,2100) 0.681 7 0 0x1000000 -1 -1 "double Fsw={Fsw/5}"»
-      «text (250,2250) 0.681 7 0 0x1000000 -1 -1 "double Norm= {Vdc_Link}"»
-      «pin (1900,2700) (0,0) 1 11 146 0x0 -1 "p1a"»
-      «pin (1900,2500) (0,0) 1 11 146 0x0 -1 "p1b"»
-      «pin (1900,2300) (0,0) 1 11 146 0x0 -1 "p2a"»
-      «pin (1900,2100) (0,0) 1 11 146 0x0 -1 "p2b"»
-      «pin (1900,1900) (0,0) 1 11 146 0x0 -1 "p3a"»
-      «pin (1900,1700) (0,0) 1 11 146 0x0 -1 "p3b"»
-      «pin (1000,3000) (50,50) 1 9 145 0x0 -1 "c"»
-      «pin (700,3000) (0,-150) 1 14 145 0x0 -1 "b"»
-      «pin (400,3000) (0,-150) 1 14 145 0x0 -1 "a"»
-      «pin (400,800) (0,0) 1 14 145 0x0 -1 "CLK"»
-      «pin (1400,800) (0,0) 1 14 3 0x0 -1 "GND"»
-      «pin (900,800) (0,0) 1 14 145 0x0 -1 "time"»
-      «pin (1900,1500) (0,0) 1 11 146 0x0 -1 "tri_out"»
-      «pin (1900,1300) (0,0) 1 11 146 0x0 -1 "sig_out"»
-    »
-  »
-  «component (7400,5200) 0 0
-    «symbol B1
-      «type: B»
-      «description: Behavioral Voltage Source»
-      «shorted pins: false»
-      «line (0,-130) (0,-200) 0 0 0x1000000 -1 -1»
-      «line (0,200) (0,130) 0 0 0x1000000 -1 -1»
-      «rect (-25,77) (25,73) 0 0 0 0x1000000 0x3000000 -1 0 -1»
-      «rect (-2,50) (2,100) 0 0 0 0x1000000 0x3000000 -1 0 -1»
-      «rect (-25,-73) (25,-77) 0 0 0 0x1000000 0x3000000 -1 0 -1»
-      «ellipse (-130,130) (130,-130) 0 0 0 0x1000000 0x1000000 -1 -1»
-      «text (100,150) 1 7 0 0x1000000 -1 -1 "B10"»
-      «text (100,-150) 1 7 0 0x1000000 -1 -1 "V=time"»
-      «pin (0,200) (0,0) 1 0 0 0x0 -1 "+"»
-      «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
-    »
-  »
-  «component (-7000,3800) 0 0
+  «component (-6700,3800) 0 0
     «symbol SW
       «type: S»
       «description: Voltage Controlled Switch»
@@ -321,7 +264,7 @@
       «pin (-200,-100) (0,0) 1 0 0 0x0 -1 "-"»
     »
   »
-  «component (-7000,0) 0 0
+  «component (-6700,0) 0 0
     «symbol SW
       «type: S»
       «description: Voltage Controlled Switch»
@@ -347,7 +290,7 @@
       «pin (-200,-100) (0,0) 1 0 0 0x0 -1 "-"»
     »
   »
-  «component (-5700,3800) 0 0
+  «component (-5400,3800) 0 0
     «symbol SW
       «type: S»
       «description: Voltage Controlled Switch»
@@ -373,7 +316,7 @@
       «pin (-200,-100) (0,0) 1 0 0 0x0 -1 "-"»
     »
   »
-  «component (-5700,0) 0 0
+  «component (-5400,0) 0 0
     «symbol SW
       «type: S»
       «description: Voltage Controlled Switch»
@@ -399,7 +342,7 @@
       «pin (-200,-100) (0,0) 1 0 0 0x0 -1 "-"»
     »
   »
-  «component (-4400,3800) 0 0
+  «component (-4100,3800) 0 0
     «symbol SW
       «type: S»
       «description: Voltage Controlled Switch»
@@ -425,7 +368,7 @@
       «pin (-200,-100) (0,0) 1 0 0 0x0 -1 "-"»
     »
   »
-  «component (-4400,0) 0 0
+  «component (-4100,0) 0 0
     «symbol SW
       «type: S»
       «description: Voltage Controlled Switch»
@@ -485,7 +428,7 @@
       «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
     »
   »
-  «component (-2800,2800) 2 0
+  «component (-2500,2800) 2 0
     «symbol L
       «type: L»
       «description: Inductor»
@@ -494,13 +437,13 @@
       «line (0,-200) (0,-180) 0 0 0x1000000 -1 -1»
       «coil (-80,180) (80,-180) 0 0 0 0x1000000 -1 -1»
       «text (80,0) 1 110 0 0x1000000 -1 -1 "L4"»
-      «text (-80,0) 1 109 0 0x1000000 -1 -1 "{Lf}"»
-      «text (-250,0) 1 109 0 0x1000000 -1 -1 "rser={parasitic_resistance}"»
+      «text (-80,0) 1 109 0 0x1000000 -1 -1 "{Lf1}"»
+      «text (-250,0) 1 109 0 0x1000000 -1 -1 "rser={RLf}"»
       «pin (0,200) (0,0) 1 0 0 0x0 -1 "1"»
       «pin (0,-200) (0,0) 1 0 0 0x0 -1 "2"»
     »
   »
-  «component (-2800,2100) 2 0
+  «component (-2500,2100) 2 0
     «symbol L
       «type: L»
       «description: Inductor»
@@ -509,13 +452,13 @@
       «line (0,-200) (0,-180) 0 0 0x1000000 -1 -1»
       «coil (-80,180) (80,-180) 0 0 0 0x1000000 -1 -1»
       «text (80,0) 1 110 0 0x1000000 -1 -1 "L5"»
-      «text (-130,0) 1 109 0 0x1000000 -1 -1 "{Lf}"»
-      «text (-250,0) 1 109 0 0x1000000 -1 -1 "rser={parasitic_resistance}"»
+      «text (-130,0) 1 109 0 0x1000000 -1 -1 "{Lf1}"»
+      «text (-250,0) 1 109 0 0x1000000 -1 -1 "rser={RLf}"»
       «pin (0,200) (0,0) 1 0 0 0x0 -1 "1"»
       «pin (0,-200) (0,0) 1 0 0 0x0 -1 "2"»
     »
   »
-  «component (-2800,1400) 2 0
+  «component (-2500,1400) 2 0
     «symbol L
       «type: L»
       «description: Inductor»
@@ -524,13 +467,13 @@
       «line (0,-200) (0,-180) 0 0 0x1000000 -1 -1»
       «coil (-80,180) (80,-180) 0 0 0 0x1000000 -1 -1»
       «text (80,0) 1 110 0 0x1000000 -1 -1 "L6"»
-      «text (-80,0) 1 109 0 0x1000000 -1 -1 "{Lf}"»
-      «text (-300,0) 1 109 0 0x1000000 -1 -1 "rser={parasitic_resistance}"»
+      «text (-80,0) 1 109 0 0x1000000 -1 -1 "{Lf1}"»
+      «text (-300,0) 1 109 0 0x1000000 -1 -1 "rser={RLf}"»
       «pin (0,200) (0,0) 1 0 0 0x0 -1 "1"»
       «pin (0,-200) (0,0) 1 0 0 0x0 -1 "2"»
     »
   »
-  «component (-6600,3800) 0 0
+  «component (-6300,3800) 0 0
     «symbol D
       «type: D»
       «description: Silicon Diode»
@@ -546,7 +489,7 @@
       «pin (0,200) (0,0) 1 0 0 0x0 -1 "K"»
     »
   »
-  «component (-6600,0) 0 0
+  «component (-6300,0) 0 0
     «symbol D
       «type: D»
       «description: Silicon Diode»
@@ -562,7 +505,7 @@
       «pin (0,200) (0,0) 1 0 0 0x0 -1 "K"»
     »
   »
-  «component (-5300,3800) 0 0
+  «component (-5000,3800) 0 0
     «symbol D
       «type: D»
       «description: Silicon Diode»
@@ -578,7 +521,7 @@
       «pin (0,200) (0,0) 1 0 0 0x0 -1 "K"»
     »
   »
-  «component (-5300,0) 0 0
+  «component (-5000,0) 0 0
     «symbol D
       «type: D»
       «description: Silicon Diode»
@@ -594,7 +537,7 @@
       «pin (0,200) (0,0) 1 0 0 0x0 -1 "K"»
     »
   »
-  «component (-4000,3800) 0 0
+  «component (-3700,3800) 0 0
     «symbol D
       «type: D»
       «description: Silicon Diode»
@@ -610,7 +553,7 @@
       «pin (0,200) (0,0) 1 0 0 0x0 -1 "K"»
     »
   »
-  «component (-4000,0) 0 0
+  «component (-3700,0) 0 0
     «symbol D
       «type: D»
       «description: Silicon Diode»
@@ -626,7 +569,7 @@
       «pin (0,200) (0,0) 1 0 0 0x0 -1 "K"»
     »
   »
-  «component (-1800,600) 0 0
+  «component (-1500,600) 0 0
     «symbol C
       «type: C»
       «description: Capacitor»
@@ -636,13 +579,13 @@
       «rect (-130,-40) (130,-30) 0 0 0 0x1000000 0x3000000 -1 0 -1»
       «rect (-130,30) (130,40) 0 0 0 0x1000000 0x3000000 -1 0 -1»
       «text (100,150) 1 7 0 0x1000000 -1 -1 "C4"»
-      «text (100,-150) 1 7 0 0x1000000 -1 -1 "2µ"»
-      «text (100,-300) 1 7 0 0x1000000 -1 -1 "rser=50m"»
+      «text (100,-150) 1 7 0 0x1000000 -1 -1 "{Cf}"»
+      «text (100,-300) 1 7 0 0x1000000 -1 -1 "rser=25m"»
       «pin (0,200) (0,0) 1 0 0 0x0 -1 "+"»
       «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
     »
   »
-  «component (-900,600) 0 0
+  «component (-600,600) 0 0
     «symbol C
       «type: C»
       «description: Capacitor»
@@ -652,13 +595,13 @@
       «rect (-130,-40) (130,-30) 0 0 0 0x1000000 0x3000000 -1 0 -1»
       «rect (-130,30) (130,40) 0 0 0 0x1000000 0x3000000 -1 0 -1»
       «text (100,150) 1 7 0 0x1000000 -1 -1 "C5"»
-      «text (100,-150) 1 7 0 0x1000000 -1 -1 "2µ"»
-      «text (100,-300) 1 7 0 0x1000000 -1 -1 "rser=50m"»
+      «text (100,-150) 1 7 0 0x1000000 -1 -1 "{Cf}"»
+      «text (100,-300) 1 7 0 0x1000000 -1 -1 "rser=25m"»
       «pin (0,200) (0,0) 1 0 0 0x0 -1 "+"»
       «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
     »
   »
-  «component (0,600) 0 0
+  «component (300,600) 0 0
     «symbol C
       «type: C»
       «description: Capacitor»
@@ -668,13 +611,13 @@
       «rect (-130,-40) (130,-30) 0 0 0 0x1000000 0x3000000 -1 0 -1»
       «rect (-130,30) (130,40) 0 0 0 0x1000000 0x3000000 -1 0 -1»
       «text (100,150) 1 7 0 0x1000000 -1 -1 "C6"»
-      «text (-50,50) 1 7 0 0x1000000 -1 -1 "2µ"»
-      «text (0,-300) 1 7 0 0x1000000 -1 -1 "rser=50m"»
+      «text (50,-130) 1 7 0 0x1000000 -1 -1 "{Cf}"»
+      «text (0,-300) 1 7 0 0x1000000 -1 -1 "rser=25m"»
       «pin (0,200) (0,0) 1 0 0 0x0 -1 "+"»
       «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
     »
   »
-  «component (-7000,4300) 0 0
+  «component (-6700,4300) 0 0
     «symbol V
       «type: V»
       «description: Independent Voltage Source»
@@ -691,7 +634,7 @@
       «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
     »
   »
-  «component (-5700,4300) 0 0
+  «component (-5400,4300) 0 0
     «symbol V
       «type: V»
       «description: Independent Voltage Source»
@@ -708,7 +651,7 @@
       «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
     »
   »
-  «component (-4400,4300) 0 0
+  «component (-4100,4300) 0 0
     «symbol V
       «type: V»
       «description: Independent Voltage Source»
@@ -725,7 +668,7 @@
       «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
     »
   »
-  «component (-7000,500) 0 0
+  «component (-6700,500) 0 0
     «symbol V
       «type: V»
       «description: Independent Voltage Source»
@@ -742,7 +685,7 @@
       «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
     »
   »
-  «component (-5700,500) 0 0
+  «component (-5400,500) 0 0
     «symbol V
       «type: V»
       «description: Independent Voltage Source»
@@ -759,7 +702,7 @@
       «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
     »
   »
-  «component (-4400,500) 0 0
+  «component (-4100,500) 0 0
     «symbol V
       «type: V»
       «description: Independent Voltage Source»
@@ -776,24 +719,7 @@
       «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
     »
   »
-  «component (-2000,6700) 0 0
-    «symbol V
-      «type: V»
-      «description: Independent Voltage Source»
-      «shorted pins: false»
-      «line (0,-130) (0,-200) 0 0 0x1000000 -1 -1»
-      «line (0,200) (0,130) 0 0 0x1000000 -1 -1»
-      «rect (-25,77) (25,73) 0 0 0 0x1000000 0x3000000 -1 0 -1»
-      «rect (-2,50) (2,100) 0 0 0 0x1000000 0x3000000 -1 0 -1»
-      «rect (-25,-73) (25,-77) 0 0 0 0x1000000 0x3000000 -1 0 -1»
-      «ellipse (-130,130) (130,-130) 0 0 0 0x1000000 0x1000000 -1 -1»
-      «text (100,150) 1 7 0 0x1000000 -1 -1 "V20"»
-      «text (100,-150) 1 7 0 0x1000000 -1 -1 "pulse 0 1 0 1n 1n {0.5/(5*Fsw)} {1/(5*Fsw)}"»
-      «pin (0,200) (0,0) 1 0 0 0x0 -1 "+"»
-      «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
-    »
-  »
-  «component (2100,2800) 2 0
+  «component (2400,2800) 2 0
     «symbol R
       «type: R»
       «description: Resistor(USA Style Symbol)»
@@ -801,13 +727,13 @@
       «line (0,200) (0,180) 0 0 0x1000000 -1 -1»
       «line (0,-180) (0,-200) 0 0 0x1000000 -1 -1»
       «zigzag (-80,180) (80,-180) 0 0 0 0x1000000 -1 -1»
-      «text (80,0) 1 110 0 0x1000000 -1 -1 "R8"»
+      «text (80,0) 1 110 0 0x1000000 -1 -1 "Shunt_A"»
       «text (-80,0) 1 109 0 0x1000000 -1 -1 "{Rshunt}"»
       «pin (0,200) (0,0) 1 0 0 0x0 -1 "1"»
       «pin (0,-200) (0,0) 1 0 0 0x0 -1 "2"»
     »
   »
-  «component (2100,2100) 2 0
+  «component (2400,2100) 2 0
     «symbol R
       «type: R»
       «description: Resistor(USA Style Symbol)»
@@ -815,13 +741,13 @@
       «line (0,200) (0,180) 0 0 0x1000000 -1 -1»
       «line (0,-180) (0,-200) 0 0 0x1000000 -1 -1»
       «zigzag (-80,180) (80,-180) 0 0 0 0x1000000 -1 -1»
-      «text (80,0) 1 110 0 0x1000000 -1 -1 "R9"»
+      «text (80,0) 1 110 0 0x1000000 -1 -1 "Shunt_B"»
       «text (-80,0) 1 109 0 0x1000000 -1 -1 "{Rshunt}"»
       «pin (0,200) (0,0) 1 0 0 0x0 -1 "1"»
       «pin (0,-200) (0,0) 1 0 0 0x0 -1 "2"»
     »
   »
-  «component (2100,1400) 2 0
+  «component (2400,1400) 2 0
     «symbol R
       «type: R»
       «description: Resistor(USA Style Symbol)»
@@ -829,13 +755,13 @@
       «line (0,200) (0,180) 0 0 0x1000000 -1 -1»
       «line (0,-180) (0,-200) 0 0 0x1000000 -1 -1»
       «zigzag (-80,180) (80,-180) 0 0 0 0x1000000 -1 -1»
-      «text (80,0) 1 110 0 0x1000000 -1 -1 "R10"»
+      «text (80,0) 1 110 0 0x1000000 -1 -1 "Shunt_C"»
       «text (-80,0) 1 109 0 0x1000000 -1 -1 "{Rshunt}"»
       «pin (0,200) (0,0) 1 0 0 0x0 -1 "1"»
       «pin (0,-200) (0,0) 1 0 0 0x0 -1 "2"»
     »
   »
-  «component (2800,300) 0 0
+  «component (3100,-400) 0 0
     «symbol R
       «type: R»
       «description: Resistor(USA Style Symbol)»
@@ -849,7 +775,7 @@
       «pin (0,-200) (0,0) 1 0 0 0x0 -1 "2"»
     »
   »
-  «component (3500,300) 0 0
+  «component (3800,-400) 0 0
     «symbol R
       «type: R»
       «description: Resistor(USA Style Symbol)»
@@ -863,7 +789,7 @@
       «pin (0,-200) (0,0) 1 0 0 0x0 -1 "2"»
     »
   »
-  «component (4200,300) 0 0
+  «component (4500,-400) 0 0
     «symbol R
       «type: R»
       «description: Resistor(USA Style Symbol)»
@@ -873,48 +799,6 @@
       «zigzag (-80,180) (80,-180) 0 0 0 0x1000000 -1 -1»
       «text (100,150) 1 7 0 0x1000000 -1 -1 "R13"»
       «text (100,-150) 1 7 0 0x1000000 -1 -1 "{Rl}"»
-      «pin (0,200) (0,0) 1 0 0 0x0 -1 "1"»
-      «pin (0,-200) (0,0) 1 0 0 0x0 -1 "2"»
-    »
-  »
-  «component (-1800,-100) 0 0
-    «symbol R
-      «type: R»
-      «description: Resistor(USA Style Symbol)»
-      «shorted pins: false»
-      «line (0,200) (0,180) 0 0 0x1000000 -1 -1»
-      «line (0,-180) (0,-200) 0 0 0x1000000 -1 -1»
-      «zigzag (-80,180) (80,-180) 0 0 0 0x1000000 -1 -1»
-      «text (100,150) 1 7 0 0x1000000 -1 -1 "R14"»
-      «text (100,-150) 1 7 0 0x1000000 -1 -1 "5"»
-      «pin (0,200) (0,0) 1 0 0 0x0 -1 "1"»
-      «pin (0,-200) (0,0) 1 0 0 0x0 -1 "2"»
-    »
-  »
-  «component (-900,-100) 0 0
-    «symbol R
-      «type: R»
-      «description: Resistor(USA Style Symbol)»
-      «shorted pins: false»
-      «line (0,200) (0,180) 0 0 0x1000000 -1 -1»
-      «line (0,-180) (0,-200) 0 0 0x1000000 -1 -1»
-      «zigzag (-80,180) (80,-180) 0 0 0 0x1000000 -1 -1»
-      «text (100,150) 1 7 0 0x1000000 -1 -1 "R15"»
-      «text (100,-150) 1 7 0 0x1000000 -1 -1 "5"»
-      «pin (0,200) (0,0) 1 0 0 0x0 -1 "1"»
-      «pin (0,-200) (0,0) 1 0 0 0x0 -1 "2"»
-    »
-  »
-  «component (0,-100) 0 0
-    «symbol R
-      «type: R»
-      «description: Resistor(USA Style Symbol)»
-      «shorted pins: false»
-      «line (0,200) (0,180) 0 0 0x1000000 -1 -1»
-      «line (0,-180) (0,-200) 0 0 0x1000000 -1 -1»
-      «zigzag (-80,180) (80,-180) 0 0 0 0x1000000 -1 -1»
-      «text (100,150) 1 7 0 0x1000000 -1 -1 "R16"»
-      «text (100,-150) 1 7 0 0x1000000 -1 -1 "5"»
       «pin (0,200) (0,0) 1 0 0 0x0 -1 "1"»
       «pin (0,-200) (0,0) 1 0 0 0x0 -1 "2"»
     »
@@ -949,7 +833,7 @@
       «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
     »
   »
-  «component (700,2800) 2 0
+  «component (1000,2800) 2 0
     «symbol L
       «type: L»
       «description: Inductor»
@@ -958,13 +842,13 @@
       «line (0,-200) (0,-180) 0 0 0x1000000 -1 -1»
       «coil (-80,180) (80,-180) 0 0 0 0x1000000 -1 -1»
       «text (80,0) 1 110 0 0x1000000 -1 -1 "L7"»
-      «text (-80,0) 1 109 0 0x1000000 -1 -1 "{Lf}"»
-      «text (-250,0) 1 109 0 0x1000000 -1 -1 "rser={parasitic_resistance}"»
+      «text (-80,0) 1 109 0 0x1000000 -1 -1 "{Lf2}"»
+      «text (-250,0) 1 109 0 0x1000000 -1 -1 "rser={RLf}"»
       «pin (0,200) (0,0) 1 0 0 0x0 -1 "1"»
       «pin (0,-200) (0,0) 1 0 0 0x0 -1 "2"»
     »
   »
-  «component (700,2100) 2 0
+  «component (1000,2100) 2 0
     «symbol L
       «type: L»
       «description: Inductor»
@@ -973,13 +857,13 @@
       «line (0,-200) (0,-180) 0 0 0x1000000 -1 -1»
       «coil (-80,180) (80,-180) 0 0 0 0x1000000 -1 -1»
       «text (80,0) 1 110 0 0x1000000 -1 -1 "L8"»
-      «text (-80,0) 1 109 0 0x1000000 -1 -1 "{Lf}"»
-      «text (-250,0) 1 109 0 0x1000000 -1 -1 "rser={parasitic_resistance}"»
+      «text (-264,0) 1 111 0 0x1000000 -1 -1 "{Lf2}"»
+      «text (-350,0) 1 109 0 0x1000000 -1 -1 "rser={RLf}"»
       «pin (0,200) (0,0) 1 0 0 0x0 -1 "1"»
       «pin (0,-200) (0,0) 1 0 0 0x0 -1 "2"»
     »
   »
-  «component (700,1400) 2 0
+  «component (1000,1400) 2 0
     «symbol L
       «type: L»
       «description: Inductor»
@@ -988,13 +872,13 @@
       «line (0,-200) (0,-180) 0 0 0x1000000 -1 -1»
       «coil (-80,180) (80,-180) 0 0 0 0x1000000 -1 -1»
       «text (80,0) 1 110 0 0x1000000 -1 -1 "L9"»
-      «text (-80,0) 1 109 0 0x1000000 -1 -1 "{Lf}"»
-      «text (-300,0) 1 109 0 0x1000000 -1 -1 "rser={parasitic_resistance}"»
+      «text (-80,0) 1 109 0 0x1000000 -1 -1 "{Lf2}"»
+      «text (-300,0) 1 109 0 0x1000000 -1 -1 "rser={RLf}"»
       «pin (0,200) (0,0) 1 0 0 0x0 -1 "1"»
       «pin (0,-200) (0,0) 1 0 0 0x0 -1 "2"»
     »
   »
-  «component (9200,-2800) 0 0
+  «component (9200,-3200) 0 0
     «symbol pid_controller
       «type: Ø(.DLL)»
       «shorted pins: false»
@@ -1014,108 +898,6 @@
       «pin (-600,0) (50,0) 1 7 145 0x0 -1 "fb"»
     »
   »
-  «component (5300,4800) 0 0
-    «symbol B1
-      «type: B»
-      «description: Behavioral Voltage Source»
-      «shorted pins: false»
-      «line (0,-130) (0,-200) 0 0 0x1000000 -1 -1»
-      «line (0,200) (0,130) 0 0 0x1000000 -1 -1»
-      «rect (-25,77) (25,73) 0 0 0 0x1000000 0x3000000 -1 0 -1»
-      «rect (-2,50) (2,100) 0 0 0 0x1000000 0x3000000 -1 0 -1»
-      «rect (-25,-73) (25,-77) 0 0 0 0x1000000 0x3000000 -1 0 -1»
-      «ellipse (-130,130) (130,-130) 0 0 0 0x1000000 0x1000000 -1 -1»
-      «text (100,150) 1 7 0 0x1000000 -1 -1 "B12"»
-      «text (100,-150) 1 7 0 0x1000000 -1 -1 "V=V(v_set)*{sin(V(omega_set) *TIME)} "»
-      «pin (0,200) (0,0) 1 0 0 0x0 -1 "+"»
-      «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
-    »
-  »
-  «component (5300,3800) 0 0
-    «symbol B1
-      «type: B»
-      «description: Behavioral Voltage Source»
-      «shorted pins: false»
-      «line (0,-130) (0,-200) 0 0 0x1000000 -1 -1»
-      «line (0,200) (0,130) 0 0 0x1000000 -1 -1»
-      «rect (-25,77) (25,73) 0 0 0 0x1000000 0x3000000 -1 0 -1»
-      «rect (-2,50) (2,100) 0 0 0 0x1000000 0x3000000 -1 0 -1»
-      «rect (-25,-73) (25,-77) 0 0 0 0x1000000 0x3000000 -1 0 -1»
-      «ellipse (-130,130) (130,-130) 0 0 0 0x1000000 0x1000000 -1 -1»
-      «text (100,150) 1 7 0 0x1000000 -1 -1 "B13"»
-      «text (100,-150) 1 7 0 0x1000000 -1 -1 "V=V(v_set)*{sin(V(omega_set) *TIME - 2.094)} "»
-      «pin (0,200) (0,0) 1 0 0 0x0 -1 "+"»
-      «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
-    »
-  »
-  «component (9500,3800) 0 0
-    «symbol B1
-      «type: B»
-      «description: Behavioral Voltage Source»
-      «shorted pins: false»
-      «line (0,-130) (0,-200) 0 0 0x1000000 -1 -1»
-      «line (0,200) (0,130) 0 0 0x1000000 -1 -1»
-      «rect (-25,77) (25,73) 0 0 0 0x1000000 0x3000000 -1 0 -1»
-      «rect (-2,50) (2,100) 0 0 0 0x1000000 0x3000000 -1 0 -1»
-      «rect (-25,-73) (25,-77) 0 0 0 0x1000000 0x3000000 -1 0 -1»
-      «ellipse (-130,130) (130,-130) 0 0 0 0x1000000 0x1000000 -1 -1»
-      «text (100,150) 1 7 0 0x1000000 -1 -1 "B14"»
-      «text (100,-150) 1 7 0 0x1000000 -1 -1 "V=V(v_set)*{sin(V(omega_set) *TIME + 2.094)} "»
-      «pin (0,200) (0,0) 1 0 0 0x0 -1 "+"»
-      «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
-    »
-  »
-  «component (14200,-8000) 6 0
-    «symbol V
-      «type: V»
-      «description: Independent Voltage Source»
-      «shorted pins: false»
-      «line (0,-130) (0,-200) 0 0 0x1000000 -1 -1»
-      «line (0,200) (0,130) 0 0 0x1000000 -1 -1»
-      «rect (-25,77) (25,73) 0 0 0 0x1000000 0x3000000 -1 0 -1»
-      «rect (-2,50) (2,100) 0 0 0 0x1000000 0x3000000 -1 0 -1»
-      «rect (-25,-73) (25,-77) 0 0 0 0x1000000 0x3000000 -1 0 -1»
-      «ellipse (-130,130) (130,-130) 0 0 0 0x1000000 0x1000000 -1 -1»
-      «text (-130,0) 1 46 0 0x1000000 -1 -1 "V10"»
-      «text (130,0) 1 45 0 0x1000000 -1 -1 "sine 0 {grid_voltage} {grid_frequency} 0 0 120"»
-      «pin (0,200) (0,0) 1 0 0 0x0 -1 "+"»
-      «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
-    »
-  »
-  «component (14100,-9400) 6 0
-    «symbol V
-      «type: V»
-      «description: Independent Voltage Source»
-      «shorted pins: false»
-      «line (0,-130) (0,-200) 0 0 0x1000000 -1 -1»
-      «line (0,200) (0,130) 0 0 0x1000000 -1 -1»
-      «rect (-25,77) (25,73) 0 0 0 0x1000000 0x3000000 -1 0 -1»
-      «rect (-2,50) (2,100) 0 0 0 0x1000000 0x3000000 -1 0 -1»
-      «rect (-25,-73) (25,-77) 0 0 0 0x1000000 0x3000000 -1 0 -1»
-      «ellipse (-130,130) (130,-130) 0 0 0 0x1000000 0x1000000 -1 -1»
-      «text (-130,0) 1 46 0 0x1000000 -1 -1 "V11"»
-      «text (130,0) 1 45 0 0x1000000 -1 -1 "sine 0 {grid_voltage} {grid_frequency} 0 0 0"»
-      «pin (0,200) (0,0) 1 0 0 0x0 -1 "+"»
-      «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
-    »
-  »
-  «component (14100,-8700) 6 0
-    «symbol V
-      «type: V»
-      «description: Independent Voltage Source»
-      «shorted pins: false»
-      «line (0,-130) (0,-200) 0 0 0x1000000 -1 -1»
-      «line (0,200) (0,130) 0 0 0x1000000 -1 -1»
-      «rect (-25,77) (25,73) 0 0 0 0x1000000 0x3000000 -1 0 -1»
-      «rect (-2,50) (2,100) 0 0 0 0x1000000 0x3000000 -1 0 -1»
-      «rect (-25,-73) (25,-77) 0 0 0 0x1000000 0x3000000 -1 0 -1»
-      «ellipse (-130,130) (130,-130) 0 0 0 0x1000000 0x1000000 -1 -1»
-      «text (-130,0) 1 46 0 0x1000000 -1 -1 "V21"»
-      «text (130,0) 1 45 0 0x1000000 -1 -1 "sine 0 {grid_voltage} {grid_frequency}  0 0 -120"»
-      «pin (0,200) (0,0) 1 0 0 0x0 -1 "+"»
-      «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
-    »
-  »
   «component (12300,-4500) 0 0
     «symbol B1
       «type: B»
@@ -1128,7 +910,7 @@
       «rect (-25,-73) (25,-77) 0 0 0 0x1000000 0x3000000 -1 0 -1»
       «ellipse (-130,130) (130,-130) 0 0 0 0x1000000 0x1000000 -1 -1»
       «text (100,150) 1 7 0 0x1000000 -1 -1 "B15"»
-      «text (150,-200) 1 7 0 0x1000000 -1 -1 "V=V(Omega_ctrl) + {grid_omega}"»
+      «text (50,-100) 1 7 0 0x1000000 -1 -1 "V=V(Omega_ctrl) + 1"»
       «pin (0,200) (0,0) 1 0 0 0x0 -1 "+"»
       «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
     »
@@ -1153,7 +935,7 @@
       «pin (-600,0) (50,0) 1 7 145 0x0 -1 "fb"»
     »
   »
-  «component (6400,-4800) 0 0
+  «component (6700,-5300) 0 0
     «symbol B1
       «type: B»
       «description: Behavioral Voltage Source»
@@ -1165,12 +947,12 @@
       «rect (-25,-73) (25,-77) 0 0 0 0x1000000 0x3000000 -1 0 -1»
       «ellipse (-130,130) (130,-130) 0 0 0 0x1000000 0x1000000 -1 -1»
       «text (100,150) 1 7 0 0x1000000 -1 -1 "B17"»
-      «text (100,-150) 1 7 0 0x1000000 -1 -1 "V=V(V_ctrl) + {grid_voltage} "»
+      «text (100,-150) 1 7 0 0x1000000 -1 -1 "V=V(V_ctrl) + 1"»
       «pin (0,200) (0,0) 1 0 0 0x0 -1 "+"»
       «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
     »
   »
-  «component (7100,900) 0 0
+  «component (7400,900) 0 0
     «symbol SW
       «type: S»
       «description: Voltage Controlled Switch»
@@ -1196,7 +978,7 @@
       «pin (-200,-100) (0,0) 1 0 0 0x0 -1 "-"»
     »
   »
-  «component (8600,900) 0 0
+  «component (8900,900) 0 0
     «symbol SW
       «type: S»
       «description: Voltage Controlled Switch»
@@ -1222,7 +1004,7 @@
       «pin (-200,-100) (0,0) 1 0 0 0x0 -1 "-"»
     »
   »
-  «component (10000,900) 0 0
+  «component (10300,900) 0 0
     «symbol SW
       «type: S»
       «description: Voltage Controlled Switch»
@@ -1248,7 +1030,7 @@
       «pin (-200,-100) (0,0) 1 0 0 0x0 -1 "-"»
     »
   »
-  «component (7100,200) 0 0
+  «component (7400,200) 0 0
     «symbol R
       «type: R»
       «description: Resistor(USA Style Symbol)»
@@ -1262,7 +1044,7 @@
       «pin (0,-200) (0,0) 1 0 0 0x0 -1 "2"»
     »
   »
-  «component (8600,200) 0 0
+  «component (8900,200) 0 0
     «symbol R
       «type: R»
       «description: Resistor(USA Style Symbol)»
@@ -1276,7 +1058,7 @@
       «pin (0,-200) (0,0) 1 0 0 0x0 -1 "2"»
     »
   »
-  «component (10000,200) 0 0
+  «component (10300,200) 0 0
     «symbol R
       «type: R»
       «description: Resistor(USA Style Symbol)»
@@ -1290,7 +1072,7 @@
       «pin (0,-200) (0,0) 1 0 0 0x0 -1 "2"»
     »
   »
-  «component (7100,-500) 0 0
+  «component (7400,-500) 0 0
     «symbol L
       «type: L»
       «description: Inductor»
@@ -1304,7 +1086,7 @@
       «pin (0,-200) (0,0) 1 0 0 0x0 -1 "2"»
     »
   »
-  «component (8600,-500) 0 0
+  «component (8900,-500) 0 0
     «symbol L
       «type: L»
       «description: Inductor»
@@ -1318,7 +1100,7 @@
       «pin (0,-200) (0,0) 1 0 0 0x0 -1 "2"»
     »
   »
-  «component (10000,-500) 0 0
+  «component (10300,-500) 0 0
     «symbol L
       «type: L»
       «description: Inductor»
@@ -1349,7 +1131,7 @@
       «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
     »
   »
-  «component (5300,-7700) 2 0
+  «component (5300,-6700) 2 0
     «symbol R
       «type: R»
       «description: Resistor(USA Style Symbol)»
@@ -1363,7 +1145,7 @@
       «pin (0,-200) (0,0) 1 0 0 0x0 -1 "2"»
     »
   »
-  «component (5800,-8300) 0 0
+  «component (5800,-7300) 0 0
     «symbol C
       «type: C»
       «description: Capacitor»
@@ -1378,7 +1160,7 @@
       «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
     »
   »
-  «component (5300,-9100) 2 0
+  «component (5300,-8100) 2 0
     «symbol R
       «type: R»
       «description: Resistor(USA Style Symbol)»
@@ -1392,7 +1174,7 @@
       «pin (0,-200) (0,0) 1 0 0 0x0 -1 "2"»
     »
   »
-  «component (5800,-9700) 0 0
+  «component (5800,-8700) 0 0
     «symbol C
       «type: C»
       «description: Capacitor»
@@ -1407,65 +1189,7 @@
       «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
     »
   »
-  «component (-3500,-2400) 2 0
-    «symbol R
-      «type: R»
-      «description: Resistor(USA Style Symbol)»
-      «shorted pins: false»
-      «line (0,200) (0,180) 0 0 0x1000000 -1 -1»
-      «line (0,-180) (0,-200) 0 0 0x1000000 -1 -1»
-      «zigzag (-80,180) (80,-180) 0 0 0 0x1000000 -1 -1»
-      «text (80,0) 1 110 0 0x1000000 -1 -1 "R6"»
-      «text (-80,0) 1 109 0 0x1000000 -1 -1 "100"»
-      «pin (0,200) (0,0) 1 0 0 0x0 -1 "1"»
-      «pin (0,-200) (0,0) 1 0 0 0x0 -1 "2"»
-    »
-  »
-  «component (-3200,-2900) 0 0
-    «symbol C
-      «type: C»
-      «description: Capacitor»
-      «shorted pins: false»
-      «line (0,200) (0,40) 0 0 0x1000000 -1 -1»
-      «line (0,-40) (0,-200) 0 0 0x1000000 -1 -1»
-      «rect (-130,-40) (130,-30) 0 0 0 0x1000000 0x3000000 -1 0 -1»
-      «rect (-130,30) (130,40) 0 0 0 0x1000000 0x3000000 -1 0 -1»
-      «text (100,150) 1 7 0 0x1000000 -1 -1 "C8"»
-      «text (100,-150) 1 7 0 0x1000000 -1 -1 "10µ"»
-      «pin (0,200) (0,0) 1 0 0 0x0 -1 "+"»
-      «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
-    »
-  »
-  «component (-3600,-4200) 2 0
-    «symbol R
-      «type: R»
-      «description: Resistor(USA Style Symbol)»
-      «shorted pins: false»
-      «line (0,200) (0,180) 0 0 0x1000000 -1 -1»
-      «line (0,-180) (0,-200) 0 0 0x1000000 -1 -1»
-      «zigzag (-80,180) (80,-180) 0 0 0 0x1000000 -1 -1»
-      «text (80,0) 1 110 0 0x1000000 -1 -1 "R17"»
-      «text (-80,0) 1 109 0 0x1000000 -1 -1 "1K"»
-      «pin (0,200) (0,0) 1 0 0 0x0 -1 "1"»
-      «pin (0,-200) (0,0) 1 0 0 0x0 -1 "2"»
-    »
-  »
-  «component (-3300,-4700) 0 0
-    «symbol C
-      «type: C»
-      «description: Capacitor»
-      «shorted pins: false»
-      «line (0,200) (0,40) 0 0 0x1000000 -1 -1»
-      «line (0,-40) (0,-200) 0 0 0x1000000 -1 -1»
-      «rect (-130,-40) (130,-30) 0 0 0 0x1000000 0x3000000 -1 0 -1»
-      «rect (-130,30) (130,40) 0 0 0 0x1000000 0x3000000 -1 0 -1»
-      «text (100,150) 1 7 0 0x1000000 -1 -1 "C9"»
-      «text (100,-150) 1 7 0 0x1000000 -1 -1 "1µ"»
-      «pin (0,200) (0,0) 1 0 0 0x0 -1 "+"»
-      «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
-    »
-  »
-  «component (12000,6900) 0 0
+  «component (15400,7100) 0 0
     «symbol
       «type: Ø(.DLL)»
       «shorted pins: false»
@@ -1477,14 +1201,16 @@
       «text (-1150,450) 0.681 7 0 0x1000000 -1 -1 "double L1_P = {L1_P}"»
       «text (-1150,350) 0.681 7 0 0x1000000 -1 -1 "double L1_Q ={L1_Q}"»
       «text (-1150,250) 0.681 7 0 0x1000000 -1 -1 "double L2_P={L2_P+L1_P}"»
-      «text (-1150,150) 0.681 7 0 0x1000000 -1 -1 "double L2_Q={-(L2_Q+L1_Q)}"»
+      «text (-1150,150) 0.681 7 0 0x1000000 -1 -1 "double L2_Q={(L2_Q+L1_Q)}"»
+      «text (-1150,50) 0.681 7 0 0x1000000 -1 -1 "double Q_rated=3000"»
+      «text (-1150,-50) 0.681 7 0 0x1000000 -1 -1 "double P_rated=4000"»
       «pin (-1000,-1300) (0,50) 1 14 145 0x0 -1 "time"»
       «pin (-200,-1300) (0,50) 1 14 3 0x0 -1 "GND"»
       «pin (300,-400) (-50,0) 1 11 146 0x0 -1 "P"»
       «pin (300,-700) (-50,0) 1 11 146 0x0 -1 "Q"»
     »
   »
-  «component (11000,5300) 0 0
+  «component (14400,5500) 0 0
     «symbol B1
       «type: B»
       «description: Behavioral Voltage Source»
@@ -1501,7 +1227,7 @@
       «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
     »
   »
-  «component (6400,-6600) 0 0
+  «component (8600,-5200) 0 0
     «symbol B1
       «type: B»
       «description: Behavioral Voltage Source»
@@ -1513,46 +1239,12 @@
       «rect (-25,-73) (25,-77) 0 0 0 0x1000000 0x3000000 -1 0 -1»
       «ellipse (-130,130) (130,-130) 0 0 0 0x1000000 0x1000000 -1 -1»
       «text (100,150) 1 7 0 0x1000000 -1 -1 "B8"»
-      «text (100,-150) 1 7 0 0x1000000 -1 -1 "V =V(Vd) / 325"»
+      «text (-300,-400) 1 7 0 0x1000000 -1 -1 "V =V(Vd) / 325"»
       «pin (0,200) (0,0) 1 0 0 0x0 -1 "+"»
       «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
     »
   »
-  «component (12300,-5500) 0 0
-    «symbol B1
-      «type: B»
-      «description: Behavioral Voltage Source»
-      «shorted pins: false»
-      «line (0,-130) (0,-200) 0 0 0x1000000 -1 -1»
-      «line (0,200) (0,130) 0 0 0x1000000 -1 -1»
-      «rect (-25,77) (25,73) 0 0 0 0x1000000 0x3000000 -1 0 -1»
-      «rect (-2,50) (2,100) 0 0 0 0x1000000 0x3000000 -1 0 -1»
-      «rect (-25,-73) (25,-77) 0 0 0 0x1000000 0x3000000 -1 0 -1»
-      «ellipse (-130,130) (130,-130) 0 0 0 0x1000000 0x1000000 -1 -1»
-      «text (100,150) 1 7 0 0x1000000 -1 -1 "B9"»
-      «text (100,-150) 1 7 0 0x1000000 -1 -1 "V =V(omega_set)/ 314.15926"»
-      «pin (0,200) (0,0) 1 0 0 0x0 -1 "+"»
-      «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
-    »
-  »
-  «component (6400,-5700) 0 0
-    «symbol B1
-      «type: B»
-      «description: Behavioral Voltage Source»
-      «shorted pins: false»
-      «line (0,-130) (0,-200) 0 0 0x1000000 -1 -1»
-      «line (0,200) (0,130) 0 0 0x1000000 -1 -1»
-      «rect (-25,77) (25,73) 0 0 0 0x1000000 0x3000000 -1 0 -1»
-      «rect (-2,50) (2,100) 0 0 0 0x1000000 0x3000000 -1 0 -1»
-      «rect (-25,-73) (25,-77) 0 0 0 0x1000000 0x3000000 -1 0 -1»
-      «ellipse (-130,130) (130,-130) 0 0 0 0x1000000 0x1000000 -1 -1»
-      «text (100,150) 1 7 0 0x1000000 -1 -1 "B19"»
-      «text (100,-150) 1 7 0 0x1000000 -1 -1 "V=V(V_set) / 325"»
-      «pin (0,200) (0,0) 1 0 0 0x0 -1 "+"»
-      «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
-    »
-  »
-  «component (12300,-6400) 0 0
+  «component (14600,-4500) 0 0
     «symbol B1
       «type: B»
       «description: Behavioral Voltage Source»
@@ -1581,7 +1273,7 @@
       «rect (-25,-73) (25,-77) 0 0 0 0x1000000 0x3000000 -1 0 -1»
       «ellipse (-130,130) (130,-130) 0 0 0 0x1000000 0x1000000 -1 -1»
       «text (100,150) 1 7 0 0x1000000 -1 -1 "B18"»
-      «text (-200,500) 1 7 0 0x1000000 -1 -1 "V=V(P_filt)"»
+      «text (-200,500) 1 7 0 0x1000000 -1 -1 "V=V(P_filt_pu)"»
       «pin (0,200) (0,0) 1 0 0 0x0 -1 "+"»
       «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
     »
@@ -1598,12 +1290,12 @@
       «rect (-25,-73) (25,-77) 0 0 0 0x1000000 0x3000000 -1 0 -1»
       «ellipse (-130,130) (130,-130) 0 0 0 0x1000000 0x1000000 -1 -1»
       «text (100,150) 1 7 0 0x1000000 -1 -1 "B16"»
-      «text (-250,-700) 1 7 0 0x1000000 -1 -1 "V=V(P_ref)"»
+      «text (-250,-700) 1 7 0 0x1000000 -1 -1 "V=V(P_ref_pu)"»
       «pin (0,200) (0,0) 1 0 0 0x0 -1 "+"»
       «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
     »
   »
-  «component (6300,-2900) 0 0
+  «component (6300,-3300) 0 0
     «symbol B1
       «type: B»
       «description: Behavioral Voltage Source»
@@ -1615,12 +1307,12 @@
       «rect (-25,-73) (25,-77) 0 0 0 0x1000000 0x3000000 -1 0 -1»
       «ellipse (-130,130) (130,-130) 0 0 0 0x1000000 0x1000000 -1 -1»
       «text (100,150) 1 7 0 0x1000000 -1 -1 "B11"»
-      «text (-250,-700) 1 7 0 0x1000000 -1 -1 "V=V(Q_ref)"»
+      «text (-250,-700) 1 7 0 0x1000000 -1 -1 "V=V(Q_ref_pu)"»
       «pin (0,200) (0,0) 1 0 0 0x0 -1 "+"»
       «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
     »
   »
-  «component (6900,-3100) 0 0
+  «component (6900,-3500) 0 0
     «symbol B1
       «type: B»
       «description: Behavioral Voltage Source»
@@ -1632,541 +1324,847 @@
       «rect (-25,-73) (25,-77) 0 0 0 0x1000000 0x3000000 -1 0 -1»
       «ellipse (-130,130) (130,-130) 0 0 0 0x1000000 0x1000000 -1 -1»
       «text (100,150) 1 7 0 0x1000000 -1 -1 "B4"»
-      «text (-200,500) 1 7 0 0x1000000 -1 -1 "V=V(Q_filt)"»
+      «text (-200,500) 1 7 0 0x1000000 -1 -1 "V=V(Q_filt_pu)"»
       «pin (0,200) (0,0) 1 0 0 0x0 -1 "+"»
       «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
     »
   »
-  «net (-5000,-4400) 1 13 0 "GND"»
-  «net (-7200,-4400) 1 13 0 "GND"»
-  «net (200,-3700) 1 7 0 "w_PI_ctrl"»
-  «net (1400,-3700) 1 13 0 "GND"»
-  «net (-1600,-3900) 1 13 0 "GND"»
-  «net (-6500,-2300) 1 14 0 "alpha"»
-  «net (-6100,-2300) 1 14 0 "beta"»
-  «net (-2900,-4100) 1 14 0 "Vq"»
-  «net (4000,-4000) 1 13 0 "GND"»
-  «net (1700,-1900) 1 14 0 "wgrid"»
-  «net (1700,-2300) 1 13 0 "GND"»
-  «net (-8900,-3700) 1 11 0 "vc-"»
-  «net (2600,-4100) 1 13 0 "GND"»
-  «net (4000,-2800) 1 14 0 "theta_PLL"»
-  «net (-8300,-4600) 1 11 0 "clk_PLL"»
-  «net (-6000,-4600) 1 11 0 "clk_PLL"»
-  «net (-1600,-4700) 1 11 0 "clk_PLL"»
-  «net (-8900,-3000) 1 11 0 "va-"»
-  «net (-8900,-3400) 1 11 0 "vb-"»
-  «net (-2800,-8700) 1 11 0 "theta_PLL"»
-  «net (-5900,-7900) 1 11 0 "Ia"»
-  «net (-5900,-8300) 1 11 0 "Ib"»
-  «net (-5900,-8600) 1 11 0 "Ic"»
-  «net (-5300,-9200) 1 11 0 "clk_PLL"»
-  «net (-4400,-9200) 1 13 0 "GND"»
-  «net (-1600,-9300) 1 13 0 "GND"»
-  «net (-2600,-9200) 1 11 0 "clk_PLL"»
-  «net (-500,-8400) 1 7 0 "Iq"»
-  «net (-500,-8000) 1 7 0 "Id"»
-  «net (2100,-9600) 1 13 0 "GND"»
-  «net (2600,-8600) 1 7 0 "Q"»
-  «net (2600,-8100) 1 7 0 "P"»
-  «net (1300,-9800) 1 11 0 "clk_PLL"»
-  «net (900,-8600) 1 11 0 "Id"»
-  «net (900,-8800) 1 11 0 "Iq"»
-  «net (900,-8100) 1 11 0 "Vd"»
-  «net (900,-8300) 1 11 0 "Vq"»
-  «net (-2000,7500) 1 13 0 "GND"»
-  «net (-2000,8100) 1 14 0 "clk_PLL"»
-  «net (-9300,-9500) 1 13 0 "GND"»
-  «net (-10600,-8000) 1 14 0 "Ia"»
-  «net (-9900,-8000) 1 14 0 "Ib"»
-  «net (-9300,-8000) 1 14 0 "Ic"»
-  «net (7900,5400) 1 13 0 "GND"»
-  «net (6900,5400) 1 13 0 "clk_current"»
-  «net (7400,5000) 1 13 0 "GND"»
+  «component (7700,5500) 0 0
+    «symbol B1
+      «type: B»
+      «description: Behavioral Voltage Source»
+      «shorted pins: false»
+      «line (0,-130) (0,-200) 0 0 0x1000000 -1 -1»
+      «line (0,200) (0,130) 0 0 0x1000000 -1 -1»
+      «rect (-25,77) (25,73) 0 0 0 0x1000000 0x3000000 -1 0 -1»
+      «rect (-2,50) (2,100) 0 0 0 0x1000000 0x3000000 -1 0 -1»
+      «rect (-25,-73) (25,-77) 0 0 0 0x1000000 0x3000000 -1 0 -1»
+      «ellipse (-130,130) (130,-130) 0 0 0 0x1000000 0x1000000 -1 -1»
+      «text (100,150) 1 7 0 0x1000000 -1 -1 "B21"»
+      «text (100,-150) 1 7 0 0x1000000 -1 -1 "V=time"»
+      «pin (0,200) (0,0) 1 0 0 0x0 -1 "+"»
+      «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
+    »
+  »
+  «component (700,4600) 0 0
+    «symbol V
+      «type: V»
+      «description: Independent Voltage Source»
+      «shorted pins: false»
+      «line (0,-130) (0,-200) 0 0 0x1000000 -1 -1»
+      «line (0,200) (0,130) 0 0 0x1000000 -1 -1»
+      «rect (-25,77) (25,73) 0 0 0 0x1000000 0x3000000 -1 0 -1»
+      «rect (-2,50) (2,100) 0 0 0 0x1000000 0x3000000 -1 0 -1»
+      «rect (-25,-73) (25,-77) 0 0 0 0x1000000 0x3000000 -1 0 -1»
+      «ellipse (-130,130) (130,-130) 0 0 0 0x1000000 0x1000000 -1 -1»
+      «text (100,150) 1 7 0 0x1000000 -1 -1 "V2"»
+      «text (-1200,-300) 1 7 0 0x1000000 -1 -1 "pulse 0 1 0 1n 1n {0.5/{20e3}} {1/{20e3}}"»
+      «pin (0,200) (0,0) 1 0 0 0x0 -1 "+"»
+      «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
+    »
+  »
+  «component (10800,7000) 0 0
+    «symbol B1
+      «type: B»
+      «description: Behavioral Voltage Source»
+      «shorted pins: false»
+      «line (0,-130) (0,-200) 0 0 0x1000000 -1 -1»
+      «line (0,200) (0,130) 0 0 0x1000000 -1 -1»
+      «rect (-25,77) (25,73) 0 0 0 0x1000000 0x3000000 -1 0 -1»
+      «rect (-2,50) (2,100) 0 0 0 0x1000000 0x3000000 -1 0 -1»
+      «rect (-25,-73) (25,-77) 0 0 0 0x1000000 0x3000000 -1 0 -1»
+      «ellipse (-130,130) (130,-130) 0 0 0 0x1000000 0x1000000 -1 -1»
+      «text (100,150) 1 7 0 0x1000000 -1 -1 "B22"»
+      «text (-1250,-420) 1 7 0 0x1000000 -1 -1 "V={if(V(duty_A) > V(tri) , 1 , 0)}"»
+      «pin (0,200) (0,0) 1 0 0 0x0 -1 "+"»
+      «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
+    »
+  »
+  «component (12200,6900) 0 0
+    «symbol B1
+      «type: B»
+      «description: Behavioral Voltage Source»
+      «shorted pins: false»
+      «line (0,-130) (0,-200) 0 0 0x1000000 -1 -1»
+      «line (0,200) (0,130) 0 0 0x1000000 -1 -1»
+      «rect (-25,77) (25,73) 0 0 0 0x1000000 0x3000000 -1 0 -1»
+      «rect (-2,50) (2,100) 0 0 0 0x1000000 0x3000000 -1 0 -1»
+      «rect (-25,-73) (25,-77) 0 0 0 0x1000000 0x3000000 -1 0 -1»
+      «ellipse (-130,130) (130,-130) 0 0 0 0x1000000 0x1000000 -1 -1»
+      «text (100,150) 1 7 0 0x1000000 -1 -1 "B23"»
+      «text (100,-150) 1 7 0 0x1000000 -1 -1 "V={!V(AH)}"»
+      «pin (0,200) (0,0) 1 0 0 0x0 -1 "+"»
+      «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
+    »
+  »
+  «component (10800,5800) 0 0
+    «symbol B1
+      «type: B»
+      «description: Behavioral Voltage Source»
+      «shorted pins: false»
+      «line (0,-130) (0,-200) 0 0 0x1000000 -1 -1»
+      «line (0,200) (0,130) 0 0 0x1000000 -1 -1»
+      «rect (-25,77) (25,73) 0 0 0 0x1000000 0x3000000 -1 0 -1»
+      «rect (-2,50) (2,100) 0 0 0 0x1000000 0x3000000 -1 0 -1»
+      «rect (-25,-73) (25,-77) 0 0 0 0x1000000 0x3000000 -1 0 -1»
+      «ellipse (-130,130) (130,-130) 0 0 0 0x1000000 0x1000000 -1 -1»
+      «text (100,150) 1 7 0 0x1000000 -1 -1 "B24"»
+      «text (-1250,-420) 1 7 0 0x1000000 -1 -1 "V={if(V(duty_B) > V(tri) , 1 , 0)}"»
+      «pin (0,200) (0,0) 1 0 0 0x0 -1 "+"»
+      «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
+    »
+  »
+  «component (12200,5700) 0 0
+    «symbol B1
+      «type: B»
+      «description: Behavioral Voltage Source»
+      «shorted pins: false»
+      «line (0,-130) (0,-200) 0 0 0x1000000 -1 -1»
+      «line (0,200) (0,130) 0 0 0x1000000 -1 -1»
+      «rect (-25,77) (25,73) 0 0 0 0x1000000 0x3000000 -1 0 -1»
+      «rect (-2,50) (2,100) 0 0 0 0x1000000 0x3000000 -1 0 -1»
+      «rect (-25,-73) (25,-77) 0 0 0 0x1000000 0x3000000 -1 0 -1»
+      «ellipse (-130,130) (130,-130) 0 0 0 0x1000000 0x1000000 -1 -1»
+      «text (100,150) 1 7 0 0x1000000 -1 -1 "B25"»
+      «text (100,-150) 1 7 0 0x1000000 -1 -1 "V={!V(BH)}"»
+      «pin (0,200) (0,0) 1 0 0 0x0 -1 "+"»
+      «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
+    »
+  »
+  «component (10900,4600) 0 0
+    «symbol B1
+      «type: B»
+      «description: Behavioral Voltage Source»
+      «shorted pins: false»
+      «line (0,-130) (0,-200) 0 0 0x1000000 -1 -1»
+      «line (0,200) (0,130) 0 0 0x1000000 -1 -1»
+      «rect (-25,77) (25,73) 0 0 0 0x1000000 0x3000000 -1 0 -1»
+      «rect (-2,50) (2,100) 0 0 0 0x1000000 0x3000000 -1 0 -1»
+      «rect (-25,-73) (25,-77) 0 0 0 0x1000000 0x3000000 -1 0 -1»
+      «ellipse (-130,130) (130,-130) 0 0 0 0x1000000 0x1000000 -1 -1»
+      «text (100,150) 1 7 0 0x1000000 -1 -1 "B26"»
+      «text (-1250,-420) 1 7 0 0x1000000 -1 -1 "V={if(V(duty_C) > V(tri) , 1 , 0)}"»
+      «pin (0,200) (0,0) 1 0 0 0x0 -1 "+"»
+      «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
+    »
+  »
+  «component (12300,4500) 0 0
+    «symbol B1
+      «type: B»
+      «description: Behavioral Voltage Source»
+      «shorted pins: false»
+      «line (0,-130) (0,-200) 0 0 0x1000000 -1 -1»
+      «line (0,200) (0,130) 0 0 0x1000000 -1 -1»
+      «rect (-25,77) (25,73) 0 0 0 0x1000000 0x3000000 -1 0 -1»
+      «rect (-2,50) (2,100) 0 0 0 0x1000000 0x3000000 -1 0 -1»
+      «rect (-25,-73) (25,-77) 0 0 0 0x1000000 0x3000000 -1 0 -1»
+      «ellipse (-130,130) (130,-130) 0 0 0 0x1000000 0x1000000 -1 -1»
+      «text (100,150) 1 7 0 0x1000000 -1 -1 "B27"»
+      «text (100,-150) 1 7 0 0x1000000 -1 -1 "V={!V(CH)}"»
+      «pin (0,200) (0,0) 1 0 0 0x0 -1 "+"»
+      «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
+    »
+  »
+  «component (8400,4600) 0 0
+    «symbol B1
+      «type: B»
+      «description: Behavioral Voltage Source»
+      «shorted pins: false»
+      «line (0,-130) (0,-200) 0 0 0x1000000 -1 -1»
+      «line (0,200) (0,130) 0 0 0x1000000 -1 -1»
+      «rect (-25,77) (25,73) 0 0 0 0x1000000 0x3000000 -1 0 -1»
+      «rect (-2,50) (2,100) 0 0 0 0x1000000 0x3000000 -1 0 -1»
+      «rect (-25,-73) (25,-77) 0 0 0 0x1000000 0x3000000 -1 0 -1»
+      «ellipse (-130,130) (130,-130) 0 0 0 0x1000000 0x1000000 -1 -1»
+      «text (100,150) 1 7 0 0x1000000 -1 -1 "B28"»
+      «text (-2050,-400) 1 7 0 0x1000000 -1 -1 "V=2*pi*(time - 20m*floor(time/20m))/20m"»
+      «pin (0,200) (0,0) 1 0 0 0x0 -1 "+"»
+      «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
+    »
+  »
+  «component (700,6000) 0 0
+    «symbol B1
+      «type: B»
+      «description: Behavioral Voltage Source»
+      «shorted pins: false»
+      «line (0,-130) (0,-200) 0 0 0x1000000 -1 -1»
+      «line (0,200) (0,130) 0 0 0x1000000 -1 -1»
+      «rect (-25,77) (25,73) 0 0 0 0x1000000 0x3000000 -1 0 -1»
+      «rect (-2,50) (2,100) 0 0 0 0x1000000 0x3000000 -1 0 -1»
+      «rect (-25,-73) (25,-77) 0 0 0 0x1000000 0x3000000 -1 0 -1»
+      «ellipse (-130,130) (130,-130) 0 0 0 0x1000000 0x1000000 -1 -1»
+      «text (100,150) 1 7 0 0x1000000 -1 -1 "B10"»
+      «text (-1600,-550) 1 7 0 0x1000000 -1 -1 "V=abs((time % {tri_period})/{0.5*tri_period} - 1)"»
+      «pin (0,200) (0,0) 1 0 0 0x0 -1 "+"»
+      «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
+    »
+  »
+  «component (6800,5000) 0 0
+    «symbol
+      «type: Ø(.DLL)»
+      «shorted pins: false»
+      «rect (0,3000) (1900,800) 0 0 0 0x4000000 0x4000000 -1 1 -1»
+      «text (850,2550) 1 12 0 0x1000000 -1 -1 "X12"»
+      «text (203,2861) 0.681 7 0 0x1000000 -1 -1 "SPWM_controller_translate"»
+      «text (0,1250) 0.681 7 0 0x1000000 -1 -1 "double Fsw=20e3"»
+      «text (0,1350) 0.681 7 0 0x1000000 -1 -1 "double Norm= 325"»
+      «pin (1900,2700) (0,0) 1 11 146 0x0 -1 "duty_A"»
+      «pin (1900,2500) (0,0) 1 11 146 0x0 -1 "duty_B"»
+      «pin (1900,2300) (0,0) 1 11 146 0x0 -1 "duty_C"»
+      «pin (400,800) (0,0) 1 14 145 0x0 -1 "CLK"»
+      «pin (1400,800) (0,0) 1 14 3 0x0 -1 "GND"»
+      «pin (900,800) (0,0) 1 14 145 0x0 -1 "time"»
+      «pin (1900,1300) (0,0) 1 11 146 0x0 -1 "sig_out"»
+      «pin (0,2300) (250,-50) 1 14 145 0x0 -1 "phase"»
+      «pin (0,2000) (150,-50) 1 14 145 0x0 -1 "V"»
+    »
+  »
+  «component (4600,7300) 0 0
+    «symbol Integrator
+      «type: X»
+      «description: Integrator with RESET»
+      «library file: |.subckt integrator in reset out\nB1 out 0 V=idt(V(in),ic,V(reset))\n.ends integrator»
+      «shorted pins: false»
+      «line (-300,200) (-300,-200) 0 0 0x1000000 -1 -1»
+      «line (-300,-200) (200,-200) 0 0 0x1000000 -1 -1»
+      «line (200,-200) (300,0) 0 0 0x1000000 -1 -1»
+      «line (300,0) (200,200) 0 0 0x1000000 -1 -1»
+      «line (200,200) (-300,200) 0 0 0x1000000 -1 -1»
+      «text (-150,303) 1 7 0 0x1000000 -1 -1 "X8"»
+      «text (-43,300) 1 7 2 0x1000000 -1 -1 "INTEGRATOR"»
+      «text (-30,100) 1 0 1 0x1000000 -1 -1 "idt()"»
+      «text (-129,-300) 1 7 0 0x0 -1 -1 "IC=<0>"»
+      «pin (-300,0) (0,0) 1 15 0 0x0 -1 "in"»
+      «pin (-200,-200) (-80,0) 1 6 0 0x0 -1 "reset"»
+      «pin (300,0) (0,0) 1 0 0 0x0 -1 "out"»
+    »
+  »
+  «component (4400,6600) 0 0
+    «symbol B1
+      «type: B»
+      «description: Behavioral Voltage Source»
+      «shorted pins: false»
+      «line (0,-130) (0,-200) 0 0 0x1000000 -1 -1»
+      «line (0,200) (0,130) 0 0 0x1000000 -1 -1»
+      «rect (-25,77) (25,73) 0 0 0 0x1000000 0x3000000 -1 0 -1»
+      «rect (-2,50) (2,100) 0 0 0 0x1000000 0x3000000 -1 0 -1»
+      «rect (-25,-73) (25,-77) 0 0 0 0x1000000 0x3000000 -1 0 -1»
+      «ellipse (-130,130) (130,-130) 0 0 0 0x1000000 0x1000000 -1 -1»
+      «text (100,150) 1 7 0 0x1000000 -1 -1 "B13"»
+      «text (-1850,-550) 1 7 0 0x1000000 -1 -1 "V={if(V(phase) > 6.28318, 1, 0)}"»
+      «pin (0,200) (0,0) 1 0 0 0x0 -1 "+"»
+      «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
+    »
+  »
+  «component (-4800,7900) 0 0
+    «symbol B1
+      «type: B»
+      «description: Behavioral Voltage Source»
+      «shorted pins: false»
+      «line (0,-130) (0,-200) 0 0 0x1000000 -1 -1»
+      «line (0,200) (0,130) 0 0 0x1000000 -1 -1»
+      «rect (-25,77) (25,73) 0 0 0 0x1000000 0x3000000 -1 0 -1»
+      «rect (-2,50) (2,100) 0 0 0 0x1000000 0x3000000 -1 0 -1»
+      «rect (-25,-73) (25,-77) 0 0 0 0x1000000 0x3000000 -1 0 -1»
+      «ellipse (-130,130) (130,-130) 0 0 0 0x1000000 0x1000000 -1 -1»
+      «text (100,150) 1 7 0 0x1000000 -1 -1 "B12"»
+      «text (100,-150) 1 7 0 0x1000000 -1 -1 "V={grid_voltage}"»
+      «pin (0,200) (0,0) 1 0 0 0x0 -1 "+"»
+      «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
+    »
+  »
+  «component (7200,-6900) 0 0
+    «symbol B1
+      «type: B»
+      «description: Behavioral Voltage Source»
+      «shorted pins: false»
+      «line (0,-130) (0,-200) 0 0 0x1000000 -1 -1»
+      «line (0,200) (0,130) 0 0 0x1000000 -1 -1»
+      «rect (-25,77) (25,73) 0 0 0 0x1000000 0x3000000 -1 0 -1»
+      «rect (-2,50) (2,100) 0 0 0 0x1000000 0x3000000 -1 0 -1»
+      «rect (-25,-73) (25,-77) 0 0 0 0x1000000 0x3000000 -1 0 -1»
+      «ellipse (-130,130) (130,-130) 0 0 0 0x1000000 0x1000000 -1 -1»
+      «text (100,150) 1 7 0 0x1000000 -1 -1 "B14"»
+      «text (100,-150) 1 7 0 0x1000000 -1 -1 "V=V(P_filt)/{4000}"»
+      «pin (0,200) (0,0) 1 0 0 0x0 -1 "+"»
+      «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
+    »
+  »
+  «component (7300,-8400) 0 0
+    «symbol B1
+      «type: B»
+      «description: Behavioral Voltage Source»
+      «shorted pins: false»
+      «line (0,-130) (0,-200) 0 0 0x1000000 -1 -1»
+      «line (0,200) (0,130) 0 0 0x1000000 -1 -1»
+      «rect (-25,77) (25,73) 0 0 0 0x1000000 0x3000000 -1 0 -1»
+      «rect (-2,50) (2,100) 0 0 0 0x1000000 0x3000000 -1 0 -1»
+      «rect (-25,-73) (25,-77) 0 0 0 0x1000000 0x3000000 -1 0 -1»
+      «ellipse (-130,130) (130,-130) 0 0 0 0x1000000 0x1000000 -1 -1»
+      «text (100,150) 1 7 0 0x1000000 -1 -1 "B29"»
+      «text (100,-150) 1 7 0 0x1000000 -1 -1 "V=V(Q_filt)/{3000}"»
+      «pin (0,200) (0,0) 1 0 0 0x0 -1 "+"»
+      «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
+    »
+  »
+  «component (12300,-5400) 0 0
+    «symbol B1
+      «type: B»
+      «description: Behavioral Voltage Source»
+      «shorted pins: false»
+      «line (0,-130) (0,-200) 0 0 0x1000000 -1 -1»
+      «line (0,200) (0,130) 0 0 0x1000000 -1 -1»
+      «rect (-25,77) (25,73) 0 0 0 0x1000000 0x3000000 -1 0 -1»
+      «rect (-2,50) (2,100) 0 0 0 0x1000000 0x3000000 -1 0 -1»
+      «rect (-25,-73) (25,-77) 0 0 0 0x1000000 0x3000000 -1 0 -1»
+      «ellipse (-130,130) (130,-130) 0 0 0 0x1000000 0x1000000 -1 -1»
+      «text (100,150) 1 7 0 0x1000000 -1 -1 "B9"»
+      «text (50,-100) 1 7 0 0x1000000 -1 -1 "V=V(omega_set_pu)*{grid_omega}"»
+      «pin (0,200) (0,0) 1 0 0 0x0 -1 "+"»
+      «pin (0,-200) (0,0) 1 0 0 0x0 -1 "-"»
+    »
+  »
+  «component (-5200,-7300) 0 0
+    «symbol
+      «type: Ø(.DLL)»
+      «shorted pins: false»
+      «rect (-800,700) (800,-700) 0 0 0 0x4000000 0x4000000 -1 1 -1»
+      «text (-50,-150) 1 12 0 0x1000000 -1 -1 "X3"»
+      «text (-50,-250) 0.681 13 0 0x1000000 -1 -1 "clark_transform_X1"»
+      «pin (800,300) (-200,0) 1 14 146 0x0 -1 "alpha"»
+      «pin (800,-100) (0,0) 1 11 146 0x0 -1 "beta"»
+      «pin (-800,400) (0,0) 1 7 145 0x0 -1 "a"»
+      «pin (-800,0) (50,0) 1 14 145 0x0 -1 "b"»
+      «pin (-800,-300) (50,50) 1 7 145 0x0 -1 "c"»
+      «pin (-500,-700) (0,0) 1 14 145 0x0 -1 "CLK"»
+      «pin (-100,-700) (0,0) 1 14 3 0x0 -1 "GND"»
+      «pin (800,-500) (-300,-50) 1 14 146 0x0 -1 "gamma"»
+    »
+  »
+  «net (-4600,-4200) 1 13 0 "GND"»
+  «net (-8200,-4300) 1 13 0 "GND"»
+  «net (-300,-2800) 1 7 0 "w_PI_ctrl"»
+  «net (900,-3600) 1 13 0 "GND"»
+  «net (-2100,-3000) 1 13 0 "GND"»
+  «net (3500,-3900) 1 13 0 "GND"»
+  «net (-3200,8100) 1 14 0 "w_grid"»
+  «net (-9500,-3600) 1 11 0 "vc-"»
+  «net (2100,-4000) 1 13 0 "GND"»
+  «net (3500,-2700) 1 14 0 "theta_PLL"»
+  «net (-8900,-4200) 1 11 0 "clk_PLL"»
+  «net (-5300,-4200) 1 11 0 "clk_PLL"»
+  «net (-2100,-3800) 1 11 0 "clk_PLL"»
+  «net (-9500,-2900) 1 11 0 "va-"»
+  «net (-9500,-3300) 1 11 0 "vb-"»
+  «net (-2800,-7700) 1 11 0 "theta_PLL"»
+  «net (-6400,-6900) 1 11 0 "Ia"»
+  «net (-6400,-7300) 1 11 0 "Ib"»
+  «net (-6400,-7600) 1 11 0 "Ic"»
+  «net (-5800,-8200) 1 11 0 "clk_PLL"»
+  «net (-5300,-8200) 1 13 0 "GND"»
+  «net (-1600,-8200) 1 13 0 "GND"»
+  «net (-2600,-8200) 1 11 0 "clk_PLL"»
+  «net (-500,-7400) 1 7 0 "Iq"»
+  «net (-500,-7000) 1 7 0 "Id"»
+  «net (1800,-8600) 1 13 0 "GND"»
+  «net (2300,-7600) 1 7 0 "Q"»
+  «net (2300,-7100) 1 7 0 "P"»
+  «net (1000,-8600) 1 11 0 "clk_PLL"»
+  «net (600,-7600) 1 11 0 "Id"»
+  «net (600,-7100) 1 11 0 "Vd"»
+  «net (600,-7300) 1 11 0 "Vq"»
+  «net (-9900,-5400) 1 13 0 "GND"»
+  «net (-9900,-4800) 1 14 0 "clk_PLL"»
+  «net (-9300,-8500) 1 13 0 "GND"»
+  «net (-10600,-7000) 1 14 0 "Ia"»
+  «net (-9900,-7000) 1 14 0 "Ib"»
+  «net (-9300,-7000) 1 14 0 "Ic"»
   «net (-7800,2100) 1 7 0 "midx"»
-  «net (1500,2800) 1 14 0 "va+"»
-  «net (1500,2100) 1 14 0 "vb+"»
-  «net (1500,1400) 1 14 0 "vc+"»
-  «net (-7200,-200) 1 13 0 "GND"»
-  «net (-5900,-200) 1 13 0 "GND"»
-  «net (-4600,-200) 1 13 0 "GND"»
-  «net (-7200,3600) 1 13 0 "GND"»
-  «net (-5900,3600) 1 13 0 "GND"»
-  «net (-4600,3600) 1 13 0 "GND"»
-  «net (-7300,3900) 1 11 0 "P1H"»
-  «net (-7300,100) 1 11 0 "P1L"»
-  «net (-6000,3900) 1 11 0 "P2H"»
-  «net (-6000,100) 1 11 0 "P2L"»
-  «net (-4700,3900) 1 11 0 "P3H"»
-  «net (-4700,100) 1 11 0 "P3L"»
-  «net (-2000,6500) 1 13 0 "GND"»
-  «net (-2000,7100) 1 14 0 "clk_current"»
+  «net (1800,2800) 1 14 0 "va+"»
+  «net (1800,2100) 1 14 0 "vb+"»
+  «net (1800,1400) 1 14 0 "vc+"»
+  «net (-6900,-200) 1 13 0 "GND"»
+  «net (-5600,-200) 1 13 0 "GND"»
+  «net (-4300,-200) 1 13 0 "GND"»
+  «net (-6900,3600) 1 13 0 "GND"»
+  «net (-5600,3600) 1 13 0 "GND"»
+  «net (-4300,3600) 1 13 0 "GND"»
   «net (-10200,1800) 1 13 0 "GND"»
-  «net (3500,-500) 1 13 0 "GND"»
-  «net (2600,2800) 1 14 0 "va-"»
-  «net (2600,1400) 1 14 0 "vc-"»
-  «net (2600,2100) 1 14 0 "vb-"»
-  «net (8700,7400) 1 7 0 "P1H"»
-  «net (8700,7200) 1 7 0 "P1L"»
-  «net (8700,7000) 1 7 0 "P2H"»
-  «net (8700,6800) 1 7 0 "P2L"»
-  «net (8700,6600) 1 7 0 "P3H"»
-  «net (8700,6400) 1 7 0 "P3L"»
-  «net (8700,6200) 1 7 0 "tri_out"»
-  «net (8700,6000) 1 7 0 "sig_out"»
-  «net (6300,-3400) 1 13 0 "GND"»
-  «net (7000,-2100) 1 14 0 "Reactive_SetPoint"»
-  «net (8400,-3300) 1 11 0 "clk_PLL"»
-  «net (6900,-3400) 1 13 0 "GND"»
-  «net (10000,-2300) 1 7 0 "V_ctrl"»
-  «net (5300,4600) 1 13 0 "GND"»
-  «net (5300,5200) 1 14 0 "va_track"»
-  «net (5300,3600) 1 13 0 "GND"»
-  «net (5300,4200) 1 14 0 "vb_track"»
-  «net (9500,3600) 1 13 0 "GND"»
-  «net (9500,4200) 1 14 0 "vc_track"»
-  «net (11600,-9300) 1 13 0 "GND"»
-  «net (6400,7800) 1 11 0 "va_track"»
-  «net (6400,7900) 1 11 0 "vb_track"»
-  «net (6400,8000) 1 11 0 "vc_track"»
-  «net (1400,-3000) 1 14 0 "w_PI"»
+  «net (3800,-1000) 1 13 0 "GND"»
+  «net (2900,2800) 1 14 0 "va-"»
+  «net (2900,1400) 1 14 0 "vc-"»
+  «net (2900,2100) 1 14 0 "vb-"»
+  «net (6300,-3800) 1 13 0 "GND"»
+  «net (7000,-2500) 1 14 0 "Reactive_SetPoint"»
+  «net (8400,-3700) 1 11 0 "clk_PLL"»
+  «net (6900,-3800) 1 13 0 "GND"»
+  «net (10000,-2700) 1 7 0 "V_ctrl"»
+  «net (900,-2900) 1 14 0 "w_PI"»
   «net (12300,-4800) 1 13 0 "GND"»
-  «net (12300,-4200) 1 14 0 "omega_set"»
+  «net (12300,-4200) 1 14 0 "omega_set_pu"»
   «net (11500,-3500) 1 13 0 "GND"»
   «net (12000,-2200) 1 14 0 "Active_SetPoint"»
   «net (13300,-3400) 1 11 0 "clk_PLL"»
-  «net (6400,-5000) 1 13 0 "GND"»
+  «net (6700,-5500) 1 13 0 "GND"»
   «net (15000,-2400) 1 7 0 "Omega_ctrl"»
-  «net (6400,-4500) 1 14 0 "v_set"»
-  «net (8600,-1000) 1 13 0 "GND"»
+  «net (6700,-5000) 1 14 0 "v_pu_set"»
+  «net (8900,-1000) 1 13 0 "GND"»
   «net (5400,-100) 1 13 0 "GND"»
   «net (5400,400) 1 14 0 "ON"»
-  «net (6700,1000) 1 11 0 "ON"»
-  «net (8200,1000) 1 11 0 "ON"»
-  «net (9600,1000) 1 11 0 "ON"»
-  «net (6700,700) 1 13 0 "GND"»
-  «net (8200,700) 1 13 0 "GND"»
-  «net (9600,700) 1 13 0 "GND"»
-  «net (5800,-10100) 1 13 0 "GND"»
-  «net (5800,-8700) 1 13 0 "GND"»
-  «net (4700,-7700) 1 11 0 "P"»
-  «net (4700,-9100) 1 11 0 "Q"»
-  «net (6200,-7700) 1 7 0 "P_filt"»
-  «net (6200,-9100) 1 7 0 "Q_filt"»
-  «net (-2900,-2400) 1 7 0 "Vd"»
-  «net (-3200,-3100) 1 13 0 "GND"»
-  «net (6400,-6800) 1 13 0 "GND"»
-  «net (6400,-6300) 1 14 0 "v_pu_actual"»
-  «net (-3300,-4900) 1 13 0 "GND"»
-  «net (11800,5300) 1 13 0 "GND"»
-  «net (11000,5100) 1 13 0 "GND"»
-  «net (12800,6500) 1 7 0 "P_ref"»
-  «net (12800,6200) 1 7 0 "Q_ref"»
+  «net (7000,1000) 1 11 0 "ON"»
+  «net (8500,1000) 1 11 0 "ON"»
+  «net (9900,1000) 1 11 0 "ON"»
+  «net (7000,700) 1 13 0 "GND"»
+  «net (8500,700) 1 13 0 "GND"»
+  «net (9900,700) 1 13 0 "GND"»
+  «net (5800,-9100) 1 13 0 "GND"»
+  «net (5800,-7700) 1 13 0 "GND"»
+  «net (4700,-6700) 1 11 0 "P"»
+  «net (4700,-8100) 1 11 0 "Q"»
+  «net (6200,-6700) 1 7 0 "P_filt"»
+  «net (6200,-8100) 1 7 0 "Q_filt"»
+  «net (-3500,-3000) 1 7 0 "Vd"»
+  «net (8600,-5400) 1 13 0 "GND"»
+  «net (8600,-4900) 1 14 0 "v_pu_actual"»
+  «net (15200,5500) 1 13 0 "GND"»
+  «net (14400,5300) 1 13 0 "GND"»
+  «net (16200,6700) 1 7 0 "P_ref_pu"»
+  «net (16200,6400) 1 7 0 "Q_ref_pu"»
   «net (12100,-3500) 1 13 0 "GND"»
+  «net (14600,-4700) 1 13 0 "GND"»
+  «net (14600,-4200) 1 14 0 "Omega_pu_actual"»
+  «net (8200,5700) 1 13 0 "GND"»
+  «net (7700,5300) 1 13 0 "GND"»
+  «net (9000,6300) 1 7 0 "sig_out"»
+  «net (7200,5500) 1 13 0 "clk_SPWM"»
+  «net (700,4400) 1 13 0 "GND"»
+  «net (700,5000) 1 14 0 "clk_SPWM"»
+  «net (9000,7700) 1 7 0 "duty_A"»
+  «net (9000,7500) 1 7 0 "duty_B"»
+  «net (9000,7300) 1 7 0 "duty_C"»
+  «net (10800,6800) 1 13 0 "GND"»
+  «net (12200,6700) 1 13 0 "GND"»
+  «net (10800,7300) 1 14 0 "AH"»
+  «net (12200,7300) 1 14 0 "AL"»
+  «net (10800,5600) 1 13 0 "GND"»
+  «net (12200,5500) 1 13 0 "GND"»
+  «net (10900,4400) 1 13 0 "GND"»
+  «net (12300,4300) 1 13 0 "GND"»
+  «net (10800,6100) 1 14 0 "BH"»
+  «net (12200,6100) 1 14 0 "BL"»
+  «net (10900,4900) 1 14 0 "CH"»
+  «net (12300,4900) 1 14 0 "CL"»
+  «net (8400,4400) 1 13 0 "GND"»
+  «net (8400,4900) 1 14 0 "theta_PLL_ref"»
+  «net (-7000,3900) 1 11 0 "AH"»
+  «net (-7000,100) 1 11 0 "AL"»
+  «net (-5700,3900) 1 11 0 "BH"»
+  «net (-5700,100) 1 11 0 "BL"»
+  «net (-4400,3900) 1 11 0 "CH"»
+  «net (-4400,100) 1 11 0 "CL"»
+  «net (700,5700) 1 13 0 "GND"»
+  «net (700,6300) 1 14 0 "tri"»
+  «net (4400,6400) 1 13 0 "GND"»
+  «net (5700,7500) 1 14 0 "phase"»
+  «net (3700,7300) 1 11 0 "omega_set"»
+  «net (-4800,8100) 1 14 0 "v_grid"»
+  «net (7200,-7100) 1 13 0 "GND"»
+  «net (7200,-6700) 1 14 0 "P_filt_pu"»
+  «net (7300,-8600) 1 13 0 "GND"»
+  «net (7300,-8200) 1 14 0 "Q_filt_pu"»
   «net (12300,-5700) 1 13 0 "GND"»
-  «net (12300,-5200) 1 14 0 "Omega_pu_set"»
-  «net (6400,-5900) 1 13 0 "GND"»
-  «net (6400,-5400) 1 14 0 "v_pu_set"»
-  «net (12300,-6600) 1 13 0 "GND"»
-  «net (12300,-6100) 1 14 0 "Omega_pu_actual"»
+  «net (12300,-5100) 1 14 0 "omega_set"»
+  «net (-4800,7700) 1 13 0 "GND"»
+  «net (-3200,7700) 1 13 0 "GND"»
+  «net (-7000,-3800) 0.95099 7 0 "v_gamma"»
+  «net (-3400,-3400) 1 14 0 "Vq"»
+  «net (-6800,-3000) 1 14 0 "v_alpha"»
+  «net (-6800,-3400) 1 14 0 "v_beta"»
+  «net (-4200,-7800) 0.95099 7 0 "i_gamma"»
+  «net (-4000,-7400) 1 14 0 "i_beta"»
+  «net (-4000,-7000) 1 14 0 "i_alpha"»
+  «net (6100,7000) 1 11 0 "v_pu_set"»
+  «net (600,-7800) 1 11 0 "Iq"»
   «junction (12000,-2400)»
-  «junction (11800,-8700)»
-  «junction (8600,-800)»
-  «junction (7000,-2300)»
-  «junction (5800,-7700)»
-  «junction (5800,-9100)»
-  «junction (4200,1400)»
-  «junction (4000,-3000)»
-  «junction (3500,2100)»
-  «junction (3500,-200)»
-  «junction (2800,2800)»
-  «junction (0,1400)»
-  «junction (-900,2100)»
-  «junction (-900,-500)»
-  «junction (-1800,2800)»
-  «junction (-2900,-4200)»
-  «junction (-3200,-2400)»
-  «junction (-3300,-4200)»
-  «junction (-4400,4600)»
-  «junction (-4400,3400)»
-  «junction (-4400,1400)»
-  «junction (-4400,800)»
-  «junction (-4400,-400)»
-  «junction (-5300,4600)»
-  «junction (-5300,-400)»
-  «junction (-5700,4600)»
-  «junction (-5700,3400)»
-  «junction (-5700,2100)»
-  «junction (-5700,800)»
-  «junction (-5700,-400)»
-  «junction (-6100,-3500)»
-  «junction (-6500,-3100)»
-  «junction (-6600,4600)»
-  «junction (-6600,-400)»
-  «junction (-7000,4600)»
-  «junction (-7000,3400)»
-  «junction (-7000,2800)»
-  «junction (-7000,800)»
-  «junction (-7000,-400)»
+  «junction (8900,-800)»
+  «junction (7000,-2700)»
+  «junction (5800,-6700)»
+  «junction (5800,-8100)»
+  «junction (5700,7300)»
+  «junction (4500,1400)»
+  «junction (3800,2100)»
+  «junction (3800,-900)»
+  «junction (3500,-2900)»
+  «junction (3100,2800)»
+  «junction (300,1400)»
+  «junction (-600,2100)»
+  «junction (-600,-500)»
+  «junction (-1500,2800)»
+  «junction (-4100,4600)»
+  «junction (-4100,3400)»
+  «junction (-4100,1400)»
+  «junction (-4100,800)»
+  «junction (-4100,-400)»
+  «junction (-5000,4600)»
+  «junction (-5000,-400)»
+  «junction (-5400,4600)»
+  «junction (-5400,3400)»
+  «junction (-5400,2100)»
+  «junction (-5400,800)»
+  «junction (-5400,-400)»
+  «junction (-6300,4600)»
+  «junction (-6300,-400)»
+  «junction (-6700,4600)»
+  «junction (-6700,3400)»
+  «junction (-6700,2800)»
+  «junction (-6700,800)»
+  «junction (-6700,-400)»
   «junction (-8000,4600)»
   «junction (-8000,2100)»
   «junction (-8000,-400)»
   «junction (-8800,2100)»
-  «junction (-9300,-9300)»
+  «junction (-9300,-8300)»
   «junction (-9500,2100)»
-  «junction (-9900,-9300)»
-  «wire (-5000,-4100) (-5000,-4400) "GND"»
-  «wire (-7200,-4100) (-7200,-4400) "GND"»
-  «wire (-6500,-3100) (-5900,-3100) "alpha"»
-  «wire (-6100,-3500) (-6700,-3500) "beta"»
-  «wire (-8000,-4100) (-8000,-4600) "clk_PLL"»
-  «wire (-8000,-4600) (-8300,-4600) "clk_PLL"»
-  «wire (-5500,-4100) (-5500,-4600) "clk_PLL"»
-  «wire (-5500,-4600) (-6000,-4600) "clk_PLL"»
-  «wire (-1400,-4700) (-1600,-4700) "clk_PLL"»
-  «wire (-200,-3700) (200,-3700) "w_PI_ctrl"»
-  «wire (1400,-3300) (1400,-3000) "w_PI"»
-  «wire (1400,-3000) (2500,-3000) "w_PI"»
-  «wire (-1600,-3700) (-1600,-3900) "GND"»
-  «wire (-6500,-3100) (-6500,-2300) "alpha"»
-  «wire (-6700,-3100) (-6500,-3100) "alpha"»
-  «wire (-6100,-3500) (-6100,-2300) "beta"»
-  «wire (-5900,-3500) (-6100,-3500) "beta"»
-  «wire (-2900,-4200) (-2900,-4100) "Vq"»
-  «wire (-1400,-3700) (-1600,-3700) "GND"»
-  «wire (-2900,-4200) (-1400,-4200) "Vq"»
-  «wire (4000,-3000) (4000,-3300) "theta_PLL"»
-  «wire (3100,-3000) (4000,-3000) "theta_PLL"»
-  «wire (4000,-3700) (4000,-4000) "GND"»
-  «wire (2600,-3700) (2600,-3200) "N01"»
-  «wire (-8300,-3700) (-8900,-3700) "vc-"»
-  «wire (-8300,-3000) (-8900,-3000) "va-"»
-  «wire (4000,-3000) (4000,-2800) "theta_PLL"»
-  «wire (-4300,-3100) (-3900,-3100) "N02"»
-  «wire (-6400,-3800) (-5900,-3800) "theta_PLL"»
-  «wire (-6400,-3800) (-6400,-5800) "theta_PLL"»
-  «wire (4700,-3000) (4000,-3000) "theta_PLL"»
-  «wire (-6400,-5800) (4700,-5800) "theta_PLL"»
-  «wire (4700,-5800) (4700,-3000) "theta_PLL"»
-  «wire (-2800,-8700) (-2500,-8700) "theta_PLL"»
-  «wire (-3900,-8400) (-2500,-8400) "N03"»
-  «wire (-3900,-8000) (-2500,-8000) "N04"»
-  «wire (-5900,-8600) (-5500,-8600) "Ic"»
-  «wire (-5900,-8300) (-5500,-8300) "Ib"»
-  «wire (-5900,-7900) (-5500,-7900) "Ia"»
-  «wire (-5200,-9000) (-5200,-9200) "clk_PLL"»
-  «wire (-5200,-9200) (-5300,-9200) "clk_PLL"»
-  «wire (-4400,-9000) (-4400,-9200) "GND"»
-  «wire (-1600,-9000) (-1600,-9300) "GND"»
-  «wire (-2100,-9000) (-2100,-9200) "clk_PLL"»
-  «wire (-2100,-9200) (-2600,-9200) "clk_PLL"»
-  «wire (-500,-8000) (-900,-8000) "Id"»
-  «wire (-500,-8400) (-900,-8400) "Iq"»
-  «wire (1600,-9800) (1600,-9400) "clk_PLL"»
-  «wire (2400,-8100) (2600,-8100) "P"»
-  «wire (2400,-8600) (2600,-8600) "Q"»
-  «wire (2100,-9400) (2100,-9600) "GND"»
-  «wire (1600,-9800) (1300,-9800) "clk_PLL"»
-  «wire (900,-8600) (1200,-8600) "Id"»
-  «wire (1200,-8100) (900,-8100) "Vd"»
-  «wire (1200,-8300) (900,-8300) "Vq"»
-  «wire (1200,-8800) (900,-8800) "Iq"»
-  «wire (-8300,-3400) (-8900,-3400) "vb-"»
-  «wire (-2000,8100) (-2000,7900) "clk_PLL"»
-  «wire (-9900,-9300) (-9900,-8500) "GND"»
-  «wire (-10600,-9300) (-10600,-8500) "GND"»
-  «wire (-9300,-8500) (-9300,-9300) "GND"»
-  «wire (-10600,-8100) (-10600,-8000) "Ia"»
-  «wire (-9900,-8100) (-9900,-8000) "Ib"»
-  «wire (-9300,-8100) (-9300,-8000) "Ic"»
-  «wire (-10600,-9300) (-9900,-9300) "GND"»
-  «wire (-9900,-9300) (-9300,-9300) "GND"»
-  «wire (-9300,-9300) (-9300,-9500) "GND"»
-  «wire (7900,5500) (7900,5400) "GND"»
-  «wire (6900,5500) (6900,5400) "clk_current"»
-  «wire (7400,5400) (7400,5500) "N05"»
-  «wire (-7000,300) (-7000,200) "N06"»
-  «wire (-5700,300) (-5700,200) "N07"»
-  «wire (-4400,300) (-4400,200) "N08"»
-  «wire (-7000,-200) (-7000,-400) "N09"»
-  «wire (-7000,-400) (-8000,-400) "N09"»
+  «junction (-9900,-8300)»
+  «wire (-4600,-4000) (-4600,-4200) "GND"»
+  «wire (-8200,-4000) (-8200,-4300) "GND"»
+  «wire (-8600,-4000) (-8600,-4200) "clk_PLL"»
+  «wire (-8600,-4200) (-8900,-4200) "clk_PLL"»
+  «wire (-5100,-4000) (-5100,-4200) "clk_PLL"»
+  «wire (-5100,-4200) (-5300,-4200) "clk_PLL"»
+  «wire (-1900,-3800) (-2100,-3800) "clk_PLL"»
+  «wire (-700,-2800) (-300,-2800) "w_PI_ctrl"»
+  «wire (900,-3200) (900,-2900) "w_PI"»
+  «wire (900,-2900) (2000,-2900) "w_PI"»
+  «wire (-2100,-2800) (-2100,-3000) "GND"»
+  «wire (-1900,-2800) (-2100,-2800) "GND"»
+  «wire (3500,-2900) (3500,-3200) "theta_PLL"»
+  «wire (2600,-2900) (3500,-2900) "theta_PLL"»
+  «wire (3500,-3600) (3500,-3900) "GND"»
+  «wire (2100,-3600) (2100,-3100) "N01"»
+  «wire (-8900,-3600) (-9500,-3600) "vc-"»
+  «wire (-8900,-2900) (-9500,-2900) "va-"»
+  «wire (3500,-2900) (3500,-2700) "theta_PLL"»
+  «wire (-3900,-3000) (-3500,-3000) "Vd"»
+  «wire (-6000,-3700) (-5500,-3700) "theta_PLL"»
+  «wire (-6000,-3700) (-6000,-5700) "theta_PLL"»
+  «wire (4200,-2900) (3500,-2900) "theta_PLL"»
+  «wire (-6000,-5700) (4200,-5700) "theta_PLL"»
+  «wire (4200,-5700) (4200,-2900) "theta_PLL"»
+  «wire (-2800,-7700) (-2500,-7700) "theta_PLL"»
+  «wire (-4000,-7400) (-2500,-7400) "i_beta"»
+  «wire (-4000,-7000) (-2500,-7000) "i_alpha"»
+  «wire (-6400,-7600) (-6000,-7600) "Ic"»
+  «wire (-6400,-7300) (-6000,-7300) "Ib"»
+  «wire (-6400,-6900) (-6000,-6900) "Ia"»
+  «wire (-5700,-8000) (-5700,-8200) "clk_PLL"»
+  «wire (-5700,-8200) (-5800,-8200) "clk_PLL"»
+  «wire (-5300,-8000) (-5300,-8200) "GND"»
+  «wire (-1600,-8000) (-1600,-8200) "GND"»
+  «wire (-2100,-8000) (-2100,-8200) "clk_PLL"»
+  «wire (-2100,-8200) (-2600,-8200) "clk_PLL"»
+  «wire (-500,-7000) (-900,-7000) "Id"»
+  «wire (-500,-7400) (-900,-7400) "Iq"»
+  «wire (1300,-8600) (1300,-8400) "clk_PLL"»
+  «wire (2100,-7100) (2300,-7100) "P"»
+  «wire (2100,-7600) (2300,-7600) "Q"»
+  «wire (1800,-8400) (1800,-8600) "GND"»
+  «wire (1300,-8600) (1000,-8600) "clk_PLL"»
+  «wire (600,-7600) (900,-7600) "Id"»
+  «wire (900,-7100) (600,-7100) "Vd"»
+  «wire (900,-7300) (600,-7300) "Vq"»
+  «wire (-8900,-3300) (-9500,-3300) "vb-"»
+  «wire (-9900,-4800) (-9900,-5000) "clk_PLL"»
+  «wire (-9900,-8300) (-9900,-7500) "GND"»
+  «wire (-10600,-8300) (-10600,-7500) "GND"»
+  «wire (-9300,-7500) (-9300,-8300) "GND"»
+  «wire (-10600,-7100) (-10600,-7000) "Ia"»
+  «wire (-9900,-7100) (-9900,-7000) "Ib"»
+  «wire (-9300,-7100) (-9300,-7000) "Ic"»
+  «wire (-10600,-8300) (-9900,-8300) "GND"»
+  «wire (-9900,-8300) (-9300,-8300) "GND"»
+  «wire (-9300,-8300) (-9300,-8500) "GND"»
+  «wire (-6700,300) (-6700,200) "N02"»
+  «wire (-5400,300) (-5400,200) "N03"»
+  «wire (-4100,300) (-4100,200) "N04"»
+  «wire (-6700,-200) (-6700,-400) "N05"»
+  «wire (-6700,-400) (-8000,-400) "N05"»
   «wire (-8000,2100) (-8000,3600) "GND"»
-  «wire (-8000,4000) (-8000,4600) "N10"»
-  «wire (-6600,4600) (-7000,4600) "N10"»
-  «wire (-4400,4500) (-4400,4600) "N10"»
-  «wire (-4000,4600) (-4400,4600) "N10"»
-  «wire (-5700,-200) (-5700,-400) "N09"»
-  «wire (-6600,-400) (-5700,-400) "N09"»
-  «wire (-4400,-200) (-4400,-400) "N09"»
-  «wire (-5300,-400) (-4400,-400) "N09"»
-  «wire (-8000,-400) (-8000,-200) "N09"»
-  «wire (-6600,3600) (-6600,3400) "N11"»
-  «wire (-5700,4600) (-6600,4600) "N10"»
-  «wire (-6600,4600) (-6600,4000) "N10"»
-  «wire (-6600,3400) (-7000,3400) "N11"»
-  «wire (-7000,3600) (-7000,3400) "N11"»
-  «wire (-5300,3600) (-5300,3400) "N12"»
-  «wire (-4400,4600) (-5300,4600) "N10"»
-  «wire (-5300,4600) (-5300,4000) "N10"»
-  «wire (-5300,3400) (-5700,3400) "N12"»
-  «wire (-5700,3600) (-5700,3400) "N12"»
-  «wire (-4000,3600) (-4000,3400) "N13"»
-  «wire (-4000,4600) (-4000,4000) "N10"»
-  «wire (-4000,3400) (-4400,3400) "N13"»
-  «wire (-4400,3600) (-4400,3400) "N13"»
-  «wire (-7000,800) (-6600,800) "N11"»
-  «wire (-6600,-200) (-6600,-400) "N09"»
-  «wire (-7000,-400) (-6600,-400) "N09"»
-  «wire (-6600,800) (-6600,200) "N11"»
-  «wire (-5700,800) (-5300,800) "N12"»
-  «wire (-5300,-200) (-5300,-400) "N09"»
-  «wire (-5700,-400) (-5300,-400) "N09"»
-  «wire (-5300,800) (-5300,200) "N12"»
-  «wire (-4400,800) (-4000,800) "N13"»
-  «wire (-4000,-200) (-4000,-400) "N09"»
-  «wire (-4400,-400) (-4000,-400) "N09"»
-  «wire (-4000,800) (-4000,200) "N13"»
-  «wire (-7000,2800) (-7000,800) "N11"»
-  «wire (-5700,2100) (-5700,800) "N12"»
-  «wire (-4400,1400) (-4400,800) "N13"»
-  «wire (-900,-500) (0,-500) "GND"»
-  «wire (-1800,-500) (-900,-500) "GND"»
-  «wire (-900,-500) (-900,-900) "GND"»
-  «wire (-900,-900) (-9500,-900) "GND"»
+  «wire (-8000,4000) (-8000,4600) "N06"»
+  «wire (-6300,4600) (-6700,4600) "N06"»
+  «wire (-4100,4500) (-4100,4600) "N06"»
+  «wire (-5400,-200) (-5400,-400) "N05"»
+  «wire (-6300,-400) (-5400,-400) "N05"»
+  «wire (-4100,-200) (-4100,-400) "N05"»
+  «wire (-5000,-400) (-4100,-400) "N05"»
+  «wire (-8000,-400) (-8000,-200) "N05"»
+  «wire (-6300,3600) (-6300,3400) "N07"»
+  «wire (-5400,4600) (-6300,4600) "N06"»
+  «wire (-6300,4600) (-6300,4000) "N06"»
+  «wire (-6300,3400) (-6700,3400) "N07"»
+  «wire (-6700,3600) (-6700,3400) "N07"»
+  «wire (-5000,3600) (-5000,3400) "N08"»
+  «wire (-4100,4600) (-5000,4600) "N06"»
+  «wire (-5000,4600) (-5000,4000) "N06"»
+  «wire (-5000,3400) (-5400,3400) "N08"»
+  «wire (-5400,3600) (-5400,3400) "N08"»
+  «wire (-3700,3600) (-3700,3400) "N09"»
+  «wire (-3700,4600) (-3700,4000) "N06"»
+  «wire (-3700,3400) (-4100,3400) "N09"»
+  «wire (-4100,3600) (-4100,3400) "N09"»
+  «wire (-6700,800) (-6300,800) "N07"»
+  «wire (-6300,-200) (-6300,-400) "N05"»
+  «wire (-6700,-400) (-6300,-400) "N05"»
+  «wire (-6300,800) (-6300,200) "N07"»
+  «wire (-5400,800) (-5000,800) "N08"»
+  «wire (-5000,-200) (-5000,-400) "N05"»
+  «wire (-5400,-400) (-5000,-400) "N05"»
+  «wire (-5000,800) (-5000,200) "N08"»
+  «wire (-4100,800) (-3700,800) "N09"»
+  «wire (-3700,-200) (-3700,-400) "N05"»
+  «wire (-4100,-400) (-3700,-400) "N05"»
+  «wire (-3700,800) (-3700,200) "N09"»
+  «wire (-6700,2800) (-6700,800) "N07"»
+  «wire (-5400,2100) (-5400,800) "N08"»
+  «wire (-4100,1400) (-4100,800) "N09"»
+  «wire (-600,-500) (300,-500) "GND"»
+  «wire (-1500,-500) (-600,-500) "GND"»
+  «wire (-600,-500) (-600,-900) "GND"»
+  «wire (-600,-900) (-9500,-900) "GND"»
   «wire (-9500,-900) (-9500,2100) "GND"»
   «wire (-7800,2100) (-8000,2100) "GND"»
   «wire (-8000,200) (-8000,2100) "GND"»
-  «wire (-7000,4600) (-7000,4500) "N10"»
-  «wire (-7000,4100) (-7000,4000) "N14"»
-  «wire (-5700,4100) (-5700,4000) "N15"»
-  «wire (-5300,4600) (-5700,4600) "N10"»
-  «wire (-5700,4600) (-5700,4500) "N10"»
-  «wire (-4400,4000) (-4400,4100) "N16"»
-  «wire (-7000,800) (-7000,700) "N11"»
-  «wire (-5700,800) (-5700,700) "N12"»
-  «wire (-4400,800) (-4400,700) "N13"»
-  «wire (-4600,-100) (-4600,-200) "GND"»
-  «wire (-5900,-100) (-5900,-200) "GND"»
-  «wire (-7200,-100) (-7200,-200) "GND"»
-  «wire (-7200,3700) (-7200,3600) "GND"»
-  «wire (-5900,3700) (-5900,3600) "GND"»
-  «wire (-4600,3700) (-4600,3600) "GND"»
-  «wire (-7300,3900) (-7200,3900) "P1H"»
-  «wire (-5900,3900) (-6000,3900) "P2H"»
-  «wire (-6000,100) (-5900,100) "P2L"»
-  «wire (-4700,3900) (-4600,3900) "P3H"»
-  «wire (-4600,100) (-4700,100) "P3L"»
+  «wire (-6700,4600) (-6700,4500) "N06"»
+  «wire (-6700,4100) (-6700,4000) "N10"»
+  «wire (-5400,4100) (-5400,4000) "N11"»
+  «wire (-5000,4600) (-5400,4600) "N06"»
+  «wire (-5400,4600) (-5400,4500) "N06"»
+  «wire (-4100,4000) (-4100,4100) "N12"»
+  «wire (-6700,800) (-6700,700) "N07"»
+  «wire (-5400,800) (-5400,700) "N08"»
+  «wire (-4100,800) (-4100,700) "N09"»
+  «wire (-4300,-100) (-4300,-200) "GND"»
+  «wire (-5600,-100) (-5600,-200) "GND"»
+  «wire (-6900,-100) (-6900,-200) "GND"»
+  «wire (-6900,3700) (-6900,3600) "GND"»
+  «wire (-5600,3700) (-5600,3600) "GND"»
+  «wire (-4300,3700) (-4300,3600) "GND"»
+  «wire (-7000,3900) (-6900,3900) "AH"»
+  «wire (-5600,3900) (-5700,3900) "BH"»
+  «wire (-5700,100) (-5600,100) "BL"»
+  «wire (-4400,3900) (-4300,3900) "CH"»
+  «wire (-4300,100) (-4400,100) "CL"»
   «wire (-8800,2100) (-9500,2100) "GND"»
-  «wire (-900,2100) (-2600,2100) "N17"»
-  «wire (-7200,100) (-7300,100) "P1L"»
-  «wire (-1800,2800) (-2600,2800) "N18"»
-  «wire (0,1400) (-2600,1400) "N19"»
-  «wire (-3000,2800) (-7000,2800) "N11"»
-  «wire (-7000,3400) (-7000,2800) "N11"»
-  «wire (-5700,2100) (-3000,2100) "N12"»
-  «wire (-5700,3400) (-5700,2100) "N12"»
-  «wire (-4400,1400) (-3000,1400) "N13"»
-  «wire (-4400,3400) (-4400,1400) "N13"»
-  «wire (-1800,800) (-1800,2800) "N18"»
-  «wire (-900,800) (-900,2100) "N17"»
-  «wire (0,800) (0,1400) "N19"»
-  «wire (-2000,7100) (-2000,6900) "clk_current"»
+  «wire (-600,2100) (-2300,2100) "N13"»
+  «wire (-6900,100) (-7000,100) "AL"»
+  «wire (-1500,2800) (-2300,2800) "N14"»
+  «wire (300,1400) (-2300,1400) "N15"»
+  «wire (-2700,2800) (-6700,2800) "N07"»
+  «wire (-6700,3400) (-6700,2800) "N07"»
+  «wire (-5400,2100) (-2700,2100) "N08"»
+  «wire (-5400,3400) (-5400,2100) "N08"»
+  «wire (-4100,1400) (-2700,1400) "N09"»
+  «wire (-4100,3400) (-4100,1400) "N09"»
+  «wire (-1500,800) (-1500,2800) "N14"»
+  «wire (-600,800) (-600,2100) "N13"»
+  «wire (300,800) (300,1400) "N15"»
   «wire (-9500,2100) (-10200,2100) "GND"»
   «wire (-10200,2100) (-10200,1800) "GND"»
-  «wire (1500,1400) (1900,1400) "vc+"»
-  «wire (1500,2100) (1900,2100) "vb+"»
-  «wire (1500,2800) (1900,2800) "va+"»
-  «wire (4200,100) (4200,-200) "GND"»
-  «wire (4200,-200) (3500,-200) "GND"»
-  «wire (3500,500) (3500,2100) "vb-"»
-  «wire (3500,-200) (3500,100) "GND"»
-  «wire (2800,100) (2800,-200) "GND"»
-  «wire (2800,-200) (3500,-200) "GND"»
-  «wire (3500,-500) (3500,-200) "GND"»
-  «wire (4200,500) (4200,1400) "vc-"»
-  «wire (2800,500) (2800,2800) "va-"»
-  «wire (2300,2800) (2600,2800) "va-"»
-  «wire (2300,2100) (2600,2100) "vb-"»
-  «wire (2300,1400) (2600,1400) "vc-"»
-  «wire (-1800,-300) (-1800,-500) "GND"»
-  «wire (-1800,400) (-1800,100) "N20"»
-  «wire (-900,-300) (-900,-500) "GND"»
-  «wire (-900,400) (-900,100) "N21"»
-  «wire (0,-300) (0,-500) "GND"»
-  «wire (0,400) (0,100) "N22"»
+  «wire (1800,1400) (2200,1400) "vc+"»
+  «wire (1800,2100) (2200,2100) "vb+"»
+  «wire (1800,2800) (2200,2800) "va+"»
+  «wire (4500,-600) (4500,-900) "GND"»
+  «wire (3800,-900) (3800,-600) "GND"»
+  «wire (3100,-600) (3100,-900) "GND"»
+  «wire (3100,-900) (3800,-900) "GND"»
+  «wire (3800,-1000) (3800,-900) "GND"»
+  «wire (2600,2800) (2900,2800) "va-"»
+  «wire (2600,2100) (2900,2100) "vb-"»
+  «wire (2600,1400) (2900,1400) "vc-"»
   «wire (-8800,900) (-8800,2100) "GND"»
   «wire (-8000,2100) (-8800,2100) "GND"»
-  «wire (-8800,-400) (-8800,500) "N09"»
-  «wire (-8800,-400) (-8000,-400) "N09"»
-  «wire (-8800,3500) (-8800,4600) "N10"»
+  «wire (-8800,-400) (-8800,500) "N05"»
+  «wire (-8800,-400) (-8000,-400) "N05"»
+  «wire (-8800,3500) (-8800,4600) "N06"»
   «wire (-8800,2100) (-8800,3100) "GND"»
-  «wire (-8000,4600) (-7000,4600) "N10"»
-  «wire (-8800,4600) (-8000,4600) "N10"»
-  «wire (4200,1400) (2600,1400) "vc-"»
-  «wire (3500,2100) (2600,2100) "vb-"»
-  «wire (8700,6400) (8400,6400) "P3L"»
-  «wire (8700,7400) (8400,7400) "P1H"»
-  «wire (8700,7200) (8400,7200) "P1L"»
-  «wire (8700,7000) (8400,7000) "P2H"»
-  «wire (8700,6800) (8400,6800) "P2L"»
-  «wire (8700,6600) (8400,6600) "P3H"»
-  «wire (8400,6200) (8700,6200) "tri_out"»
-  «wire (8400,6000) (8700,6000) "sig_out"»
-  «wire (900,1400) (1500,1400) "vc+"»
-  «wire (0,1400) (500,1400) "N19"»
-  «wire (900,2100) (1500,2100) "vb+"»
-  «wire (-900,2100) (500,2100) "N17"»
-  «wire (900,2800) (1500,2800) "va+"»
-  «wire (-1800,2800) (500,2800) "N18"»
-  «wire (6300,-3100) (6300,-3400) "GND"»
-  «wire (7000,-2300) (8600,-2300) "Reactive_SetPoint"»
-  «wire (6300,-2700) (6300,-2300) "Reactive_SetPoint"»
-  «wire (10000,-2300) (9800,-2300) "V_ctrl"»
-  «wire (8400,-3300) (8600,-3300) "clk_PLL"»
-  «wire (8600,-2800) (6900,-2800) "N23"»
-  «wire (6900,-3300) (6900,-3400) "GND"»
-  «wire (6900,-2800) (6900,-2900) "N23"»
-  «wire (5300,5200) (5300,5000) "va_track"»
-  «wire (5300,4200) (5300,4000) "vb_track"»
-  «wire (9500,4200) (9500,4000) "vc_track"»
-  «wire (13900,-9400) (11800,-9400) "GND"»
-  «wire (11800,-9400) (11800,-8700) "GND"»
-  «wire (11800,-8700) (13900,-8700) "GND"»
-  «wire (14000,-8000) (11800,-8000) "GND"»
-  «wire (11800,-8000) (11800,-8700) "GND"»
-  «wire (14300,-9400) (16000,-9400) "N24"»
-  «wire (14400,-8000) (16000,-8000) "N25"»
-  «wire (14300,-8700) (16000,-8700) "N26"»
-  «wire (6900,7700) (6900,7800) "va_track"»
-  «wire (6900,7800) (6400,7800) "va_track"»
-  «wire (7200,7700) (7200,7900) "vb_track"»
-  «wire (7200,7900) (6400,7900) "vb_track"»
-  «wire (7500,7700) (7500,8000) "vc_track"»
-  «wire (7500,8000) (6400,8000) "vc_track"»
-  «wire (11800,-8700) (11600,-8700) "GND"»
-  «wire (7000,-2300) (7000,-2100) "Reactive_SetPoint"»
-  «wire (11600,-8700) (11600,-9300) "GND"»
+  «wire (-8000,4600) (-6700,4600) "N06"»
+  «wire (-8800,4600) (-8000,4600) "N06"»
+  «wire (4500,1400) (2900,1400) "vc-"»
+  «wire (3800,2100) (2900,2100) "vb-"»
+  «wire (1200,1400) (1800,1400) "vc+"»
+  «wire (300,1400) (800,1400) "N15"»
+  «wire (1200,2100) (1800,2100) "vb+"»
+  «wire (-600,2100) (800,2100) "N13"»
+  «wire (1200,2800) (1800,2800) "va+"»
+  «wire (-1500,2800) (800,2800) "N14"»
+  «wire (6300,-3500) (6300,-3800) "GND"»
+  «wire (7000,-2700) (8600,-2700) "Reactive_SetPoint"»
+  «wire (6300,-3100) (6300,-2700) "Reactive_SetPoint"»
+  «wire (10000,-2700) (9800,-2700) "V_ctrl"»
+  «wire (8400,-3700) (8600,-3700) "clk_PLL"»
+  «wire (8600,-3200) (6900,-3200) "N16"»
+  «wire (6900,-3700) (6900,-3800) "GND"»
+  «wire (6900,-3200) (6900,-3300) "N16"»
+  «wire (7000,-2700) (7000,-2500) "Reactive_SetPoint"»
   «wire (12300,-4700) (12300,-4800) "GND"»
   «wire (11500,-3200) (11500,-3500) "GND"»
-  «wire (12300,-4300) (12300,-4200) "omega_set"»
+  «wire (12300,-4300) (12300,-4200) "omega_set_pu"»
   «wire (12000,-2400) (13600,-2400) "Active_SetPoint"»
   «wire (11500,-2800) (11500,-2400) "Active_SetPoint"»
   «wire (15000,-2400) (14800,-2400) "Omega_ctrl"»
   «wire (13300,-3400) (13600,-3400) "clk_PLL"»
-  «wire (6400,-4600) (6400,-4500) "v_set"»
+  «wire (6700,-5100) (6700,-5000) "v_pu_set"»
   «wire (12000,-2400) (12000,-2200) "Active_SetPoint"»
-  «wire (3500,2100) (8600,2100) "vb-"»
-  «wire (2800,2800) (2600,2800) "va-"»
-  «wire (8600,2100) (8600,1100) "vb-"»
-  «wire (7100,-700) (7100,-800) "GND"»
-  «wire (7100,700) (7100,400) "N27"»
-  «wire (7100,0) (7100,-300) "N28"»
-  «wire (7100,-800) (8600,-800) "GND"»
-  «wire (8600,400) (8600,700) "N29"»
-  «wire (8600,-300) (8600,0) "N30"»
-  «wire (8600,-800) (8600,-700) "GND"»
-  «wire (8600,-800) (10000,-800) "GND"»
-  «wire (10000,400) (10000,700) "N31"»
-  «wire (10000,-300) (10000,0) "N32"»
-  «wire (10000,-800) (10000,-700) "GND"»
-  «wire (8600,-800) (8600,-1000) "GND"»
-  «wire (6700,1000) (6900,1000) "ON"»
+  «wire (3800,2100) (8900,2100) "vb-"»
+  «wire (3100,2800) (2900,2800) "va-"»
+  «wire (8900,2100) (8900,1100) "vb-"»
+  «wire (7400,-700) (7400,-800) "GND"»
+  «wire (7400,700) (7400,400) "N17"»
+  «wire (7400,0) (7400,-300) "N18"»
+  «wire (7400,-800) (8900,-800) "GND"»
+  «wire (8900,400) (8900,700) "N19"»
+  «wire (8900,-300) (8900,0) "N20"»
+  «wire (8900,-800) (8900,-700) "GND"»
+  «wire (8900,-800) (10300,-800) "GND"»
+  «wire (10300,400) (10300,700) "N21"»
+  «wire (10300,-300) (10300,0) "N22"»
+  «wire (10300,-800) (10300,-700) "GND"»
+  «wire (8900,-800) (8900,-1000) "GND"»
+  «wire (7000,1000) (7200,1000) "ON"»
   «wire (5400,300) (5400,400) "ON"»
-  «wire (8400,1000) (8200,1000) "ON"»
-  «wire (9800,1000) (9600,1000) "ON"»
-  «wire (6900,800) (6700,800) "GND"»
-  «wire (6700,800) (6700,700) "GND"»
-  «wire (8400,800) (8200,800) "GND"»
-  «wire (8200,800) (8200,700) "GND"»
-  «wire (9800,800) (9600,800) "GND"»
-  «wire (9600,800) (9600,700) "GND"»
-  «wire (5500,-7700) (5800,-7700) "P_filt"»
-  «wire (4700,-7700) (5100,-7700) "P"»
-  «wire (5800,-8500) (5800,-8700) "GND"»
-  «wire (5800,-7700) (5800,-8100) "P_filt"»
-  «wire (5500,-9100) (5800,-9100) "Q_filt"»
-  «wire (4700,-9100) (5100,-9100) "Q"»
-  «wire (5800,-9900) (5800,-10100) "GND"»
-  «wire (5800,-9100) (5800,-9500) "Q_filt"»
-  «wire (5800,-7700) (6200,-7700) "P_filt"»
-  «wire (5800,-9100) (6200,-9100) "Q_filt"»
-  «wire (-3200,-2400) (-3200,-2700) "Vd"»
-  «wire (-2900,-2400) (-3200,-2400) "Vd"»
-  «wire (-3300,-2400) (-3200,-2400) "Vd"»
-  «wire (-3700,-2400) (-3900,-2400) "N02"»
-  «wire (-3900,-2400) (-3900,-3100) "N02"»
-  «wire (6400,-6300) (6400,-6400) "v_pu_actual"»
-  «wire (-3300,-4200) (-3300,-4500) "Vq"»
-  «wire (-3400,-4200) (-3300,-4200) "Vq"»
-  «wire (-3300,-4200) (-2900,-4200) "Vq"»
-  «wire (-4300,-3500) (-3900,-3500) "N33"»
-  «wire (12300,6500) (12800,6500) "P_ref"»
-  «wire (12300,6200) (12800,6200) "Q_ref"»
-  «wire (11800,5600) (11800,5300) "GND"»
-  «wire (11000,5600) (11000,5500) "N34"»
-  «wire (7100,1100) (7100,2800) "va-"»
-  «wire (2800,2800) (7100,2800) "va-"»
-  «wire (4200,1400) (10000,1400) "vc-"»
-  «wire (10000,1400) (10000,1100) "vc-"»
-  «wire (6300,-2300) (7000,-2300) "Reactive_SetPoint"»
+  «wire (8700,1000) (8500,1000) "ON"»
+  «wire (10100,1000) (9900,1000) "ON"»
+  «wire (7200,800) (7000,800) "GND"»
+  «wire (7000,800) (7000,700) "GND"»
+  «wire (8700,800) (8500,800) "GND"»
+  «wire (8500,800) (8500,700) "GND"»
+  «wire (10100,800) (9900,800) "GND"»
+  «wire (9900,800) (9900,700) "GND"»
+  «wire (5500,-6700) (5800,-6700) "P_filt"»
+  «wire (4700,-6700) (5100,-6700) "P"»
+  «wire (5800,-7500) (5800,-7700) "GND"»
+  «wire (5800,-6700) (5800,-7100) "P_filt"»
+  «wire (5500,-8100) (5800,-8100) "Q_filt"»
+  «wire (4700,-8100) (5100,-8100) "Q"»
+  «wire (5800,-8900) (5800,-9100) "GND"»
+  «wire (5800,-8100) (5800,-8500) "Q_filt"»
+  «wire (5800,-6700) (6200,-6700) "P_filt"»
+  «wire (5800,-8100) (6200,-8100) "Q_filt"»
+  «wire (8600,-4900) (8600,-5000) "v_pu_actual"»
+  «wire (15700,6700) (16200,6700) "P_ref_pu"»
+  «wire (15700,6400) (16200,6400) "Q_ref_pu"»
+  «wire (15200,5800) (15200,5500) "GND"»
+  «wire (14400,5800) (14400,5700) "N23"»
+  «wire (7400,1100) (7400,2800) "va-"»
+  «wire (3100,2800) (7400,2800) "va-"»
+  «wire (4500,1400) (10300,1400) "vc-"»
+  «wire (10300,1400) (10300,1100) "vc-"»
+  «wire (6300,-2700) (7000,-2700) "Reactive_SetPoint"»
   «wire (11500,-2400) (12000,-2400) "Active_SetPoint"»
-  «wire (13600,-2900) (12100,-2900) "N35"»
+  «wire (13600,-2900) (12100,-2900) "N24"»
   «wire (12100,-3400) (12100,-3500) "GND"»
-  «wire (12100,-2900) (12100,-3000) "N35"»
-  «wire (-3900,-3500) (-3900,-4200) "N33"»
-  «wire (-3900,-4200) (-3800,-4200) "N33"»
-  «wire (12300,-5200) (12300,-5300) "Omega_pu_set"»
-  «wire (6400,-5500) (6400,-5400) "v_pu_set"»
-  «wire (12300,-6100) (12300,-6200) "Omega_pu_actual"»
-  «rect (-10800,-1500) (5650,-7050) 0 0 2 0x4000000 0x1000000 -1 0 -1»
-  «rect (-10800,-7050) (-200,-10350) 0 0 2 0x4000000 0x1000000 -1 0 -1»
+  «wire (12100,-2900) (12100,-3000) "N24"»
+  «wire (14600,-4200) (14600,-4300) "Omega_pu_actual"»
+  «wire (3100,-200) (3100,2800) "va-"»
+  «wire (3800,-200) (3800,2100) "vb-"»
+  «wire (4500,-200) (4500,1400) "vc-"»
+  «wire (4500,-900) (3800,-900) "GND"»
+  «wire (8200,5800) (8200,5700) "GND"»
+  «wire (7700,5700) (7700,5800) "N25"»
+  «wire (8700,6300) (9000,6300) "sig_out"»
+  «wire (7200,5500) (7200,5800) "clk_SPWM"»
+  «wire (700,5000) (700,4800) "clk_SPWM"»
+  «wire (8700,7700) (9000,7700) "duty_A"»
+  «wire (8700,7500) (9000,7500) "duty_B"»
+  «wire (8700,7300) (9000,7300) "duty_C"»
+  «wire (10800,7300) (10800,7200) "AH"»
+  «wire (12200,7300) (12200,7100) "AL"»
+  «wire (10800,6100) (10800,6000) "BH"»
+  «wire (12200,6100) (12200,5900) "BL"»
+  «wire (10900,4900) (10900,4800) "CH"»
+  «wire (12300,4900) (12300,4700) "CL"»
+  «wire (8400,4900) (8400,4800) "theta_PLL_ref"»
+  «wire (700,6300) (700,6200) "tri"»
+  «wire (700,5700) (700,5800) "GND"»
+  «wire (5700,7300) (6800,7300) "phase"»
+  «wire (3700,7300) (4300,7300) "omega_set"»
+  «wire (4400,7100) (4400,6800) "N26"»
+  «wire (5700,7300) (5700,7500) "phase"»
+  «wire (-1500,400) (-1500,-500) "GND"»
+  «wire (-600,400) (-600,-500) "GND"»
+  «wire (300,400) (300,-500) "GND"»
+  «wire (12300,-5600) (12300,-5700) "GND"»
+  «wire (12300,-5200) (12300,-5100) "omega_set"»
+  «wire (4900,7300) (5700,7300) "phase"»
+  «wire (6800,7000) (6100,7000) "v_pu_set"»
+  «wire (-3700,4600) (-4100,4600) "N06"»
+  «wire (-3400,-3400) (-1900,-3400) "Vq"»
+  «wire (-6800,-3400) (-5500,-3400) "v_beta"»
+  «wire (-6800,-3000) (-5500,-3000) "v_alpha"»
+  «wire (-4400,-7800) (-4200,-7800) "i_gamma"»
+  «wire (-7300,-3800) (-7000,-3800) "v_gamma"»
+  «wire (-3900,-3400) (-3400,-3400) "Vq"»
+  «wire (-7300,-3000) (-6800,-3000) "v_alpha"»
+  «wire (-7300,-3400) (-6800,-3400) "v_beta"»
+  «wire (-4400,-7400) (-4000,-7400) "i_beta"»
+  «wire (-4400,-7000) (-4000,-7000) "i_alpha"»
+  «wire (900,-7800) (600,-7800) "Iq"»
+  «rect (-10800,-1500) (5650,-6050) 0 0 2 0x4000000 0x1000000 -1 0 -1»
+  «rect (-10800,-6050) (-200,-9350) 0 0 2 0x4000000 0x1000000 -1 0 -1»
   «rect (-10800,8450) (17100,-1500) 0 0 2 0x4000000 0x1000000 -1 0 -1»
-  «rect (5650,-1500) (11150,-7050) 0 0 2 0x4000000 0x1000000 -1 0 -1»
-  «rect (-200,-7050) (3600,-10350) 0 0 2 0x4000000 0x1000000 -1 0 -1»
-  «rect (11150,-1500) (17100,-7050) 0 0 2 0x4000000 0x1000000 -1 0 -1»
-  «rect (11150,-7050) (17100,-10400) 0 0 2 0x4000000 0x1000000 -1 0 -1»
-  «rect (4200,8450) (17100,3350) 0 0 2 0x4000000 0x1000000 -1 0 -1»
-  «rect (3600,-7050) (11150,-10350) 0 0 2 0x4000000 0x1000000 -1 0 -1»
-  «text (-10550,8000) 1 7 0 0x1000000 -1 -1 "ï»¿.model SA SW ron=10m roff=10E6 vt=0.5 vh=0"»
-  «text (-10550,7800) 1 7 0 0x1000000 -1 -1 "ï»¿.model DA D vfwd=1.5 ron=10m roff=10E6"»
-  «text (-10550,7550) 1 7 0 0x1000000 -1 -1 "ï»¿.param Rshunt = 0.0001"»
-  «text (-10550,8200) 1 7 1 0x1000000 -1 -1 "ï»¿Plant (Grid Forming)"»
-  «text (-10550,7100) 1 7 0 0x1000000 -1 -1 "ï»¿.param Fsw = 50K"»
-  «text (-10550,6900) 1 7 0 0x1000000 -1 -1 "ï»¿.param Lf= 2m"»
-  «text (11300,2550) 1 7 0 0x1000000 -1 -1 "ï»¿.param Rl= {325^2/ L1_P}"»
-  «text (-9110,-1740) 1 7 1 0x1000000 -1 -1 "ï»¿SRF Phase Locked Loop: "»
-  «text (-10500,-7250) 1 7 1 0x1000000 -1 -1 "ï»¿Id, Iq Measurements"»
-  «text (5700,-1650) 1 7 1 0x1000000 -1 -1 "ï»¿Voltage Droop Controller: vset = v_grid + Kq * ( Qref - Qout)"»
-  «text (-6550,8350) 1 7 0 0x1000000 -1 -1 "ï»¿.param grid_voltage = 325"»
-  «text (-6550,8150) 1 7 0 0x1000000 -1 -1 "ï»¿.param grid_frequency = 50"»
-  «text (-6550,8000) 1 7 0 0x1000000 -1 -1 "ï»¿.param grid_omega = 314.15926535599793"»
-  «text (0,-7150) 1 7 1 0x1000000 -1 -1 "ï»¿Active (P) and Reactive (Q) Power Measurements"»
-  «text (8500,-3950) 1 7 1 0x1000000 -1 -1 "ï»¿SPWM Controller nputs"»
-  «text (11200,-7150) 1 7 1 0x1000000 -1 -1 "ï»¿Reference SPWM Controller Inputs"»
-  «text (5000,8150) 1 7 1 0x1000000 -1 -1 "ï»¿SPWM Controller"»
+  «rect (5650,-1500) (11150,-6050) 0 0 2 0x4000000 0x1000000 -1 0 -1»
+  «rect (-200,-6050) (3600,-9350) 0 0 2 0x4000000 0x1000000 -1 0 -1»
+  «rect (11150,-1500) (17100,-6050) 0 0 2 0x4000000 0x1000000 -1 0 -1»
+  «rect (-1100,8450) (17100,3600) 0 0 2 0x4000000 0x1000000 -1 0 -1»
+  «rect (3600,-6050) (11150,-9350) 0 0 2 0x4000000 0x1000000 -1 0 -1»
+  «text (-10600,7700) 1 7 0 0x1000000 -1 -1 "ï»¿.model SA SW ron=10m roff=10E6 vt=0.5 vh=0"»
+  «text (-10600,7500) 1 7 0 0x1000000 -1 -1 "ï»¿.model DA D vfwd=1.5 ron=10m roff=10E6"»
+  «text (-10600,7100) 1 7 0 0x1000000 -1 -1 "ï»¿.param Rshunt = 0.0001"»
+  «text (-10600,8300) 1 7 1 0x1000000 -1 -1 "ï»¿Plant (Grid Forming)"»
+  «text (-10600,6800) 1 7 0 0x1000000 -1 -1 "ï»¿.param Fsw = 2Meg"»
+  «text (-10600,6600) 1 7 0 0x1000000 -1 -1 "ï»¿.param Lf1= 220Âµ"»
+  «text (10950,2600) 1 7 0 0x1000000 -1 -1 "ï»¿.param Rl= {325^2/ L1_P}"»
+  «text (-9710,-1740) 1 7 1 0x1000000 -1 -1 "ï»¿SRF Phase Locked Loop: "»
+  «text (-10500,-6250) 1 7 1 0x1000000 -1 -1 "ï»¿Id, Iq Measurements"»
+  «text (5700,-1650) 1 7 1 0x1000000 -1 -1 "ï»¿Voltage Droop Controller: vset = v_grid + Kq * (Qref - Qout)"»
+  «text (-10600,5300) 1 7 0 0x1000000 -1 -1 "ï»¿.param grid_voltage = 325"»
+  «text (-10600,5150) 1 7 0 0x1000000 -1 -1 "ï»¿.param grid_frequency = 50"»
+  «text (-10600,5000) 1 7 0 0x1000000 -1 -1 "ï»¿.param grid_omega = 314.15926535599793"»
+  «text (-100,-6150) 1 7 1 0x1000000 -1 -1 "ï»¿Active (P) and Reactive (Q) Power Measurements"»
+  «text (8500,-4350) 1 7 1 0x1000000 -1 -1 "ï»¿SPWM Controller nputs"»
+  «text (-950,8300) 1 7 1 0x1000000 -1 -1 "ï»¿SPWM Controller:"»
   «text (11250,-1600) 1 7 1 0x1000000 -1 -1 "ï»¿Frequency Droop Controller: wset = w_grid + Kp * ( Pref - Pout)"»
-  «text (-10500,7350) 1 7 0 0x1000000 -1 -1 "ï»¿.tran 0 1"»
-  «text (7100,-1100) 1 7 1 0x1000000 -1 -1 "ï»¿5 kVA load at 0.8 PF: 4kW, 3 kVA (lagging)"»
-  «text (11320,2700) 1 7 0 0x1000000 -1 -1 "ï»¿.param L1_Q= 0"»
-  «text (5700,-7150) 1 7 1 0x1000000 -1 -1 "ï»¿Active (P) and Reactive (Q) Power Measurement Filter"»
-  «text (2450,-800) 1 7 1 0x1000000 -1 -1 "ï»¿3 kVA load at 1 PF: 3kW 0 VA"»
-  «text (10300,7900) 1 7 1 0x1000000 -1 -1 "ï»¿Hardcoded Load Step Tracker"»
-  «text (5800,-1850) 1 7 0 0x1000000 -1 -1 "ï»¿.param Kq = -0.05"»
+  «text (-10600,8100) 1 7 0 0x1000000 -1 -1 "ï»¿.tran 0 500m"»
+  «text (7400,-1150) 1 7 1 0x1000000 -1 -1 "ï»¿Step inductive load switched at t=t_switch."»
+  «text (10970,2750) 1 7 0 0x1000000 -1 -1 "ï»¿.param L1_Q= 0"»
+  «text (3750,-6150) 1 7 1 0x1000000 -1 -1 "ï»¿Active (P) and Reactive (Q) Power Measurement Filter"»
+  «text (3400,-1200) 1 7 1 0x1000000 -1 -1 "ï»¿Resistive load."»
+  «text (13700,8100) 1 7 1 0x1000000 -1 -1 "ï»¿Hardcoded Load Step Tracker"»
+  «text (5800,-1850) 1 7 0 0x1000000 -1 -1 "ï»¿.param Kq = -0.02"»
   «text (11250,-1750) 1 7 0 0x1000000 -1 -1 "ï»¿.param Kp = -0.02"»
-  «text (-10500,6150) 1 7 0 0x1000000 -1 -1 "ï»¿.param Vdc_Link= 400"»
-  «text (-10500,5900) 1 7 0 0x1000000 -1 -1 "ï»¿.param Parastic_resistance= 20m"»
-  «text (11300,2000) 1 7 0 0x1000000 -1 -1 "ï»¿.param L2_Q = 100/{sqrt_3}"»
-  «text (-10500,5700) 1 7 0 0x1000000 -1 -1 "ï»¿.param sqrt_3 = 1.73"»
-  «text (11300,1750) 1 7 0 0x1000000 -1 -1 "ï»¿.param L2_P= 500/{sqrt_3}"»
-  «text (11300,600) 1 7 0 0x1000000 -1 -1 "ï»¿.param L2_L = 0.6271"»
-  «text (11300,800) 1 7 0 0x1000000 -1 -1 "ï»¿.param L2_R = 64.0513"»
-  «text (11300,2300) 1 7 1 0x1000000 -1 -1 "ï»¿Switch On: A 510 VA, 0.707PF lagging load"»
-  «text (11250,3200) 1 7 1 0x1000000 -1 -1 "ï»¿LOADS (Phase Power):"»
-  «text (11300,2850) 1 7 0 0x1000000 -1 -1 "ï»¿.param L1_P = 1000/{sqrt_3}"»
-  «text (11350,3000) 1 7 1 0x1000000 -1 -1 "ï»¿Always On: A 500W Load"»
-  «text (11300,2150) 1 7 0 0x1000000 -1 -1 "ï»¿.param t_switch = 120m"»
-  «text (11300,1350) 1 7 1 0x1000000 -1 -1 "ï»¿Switch On: A 510 VA, 0.707PF lagging load: Z = V^2 / (S2*e^(-j*angle))"»
-  «text (11300,1200) 1 7 1 0x1000000 -1 -1 "ï»¿L = imag(Z)/2*pi*f"»
-  «text (11300,1050) 1 7 1 0x1000000 -1 -1 "ï»¿R = real(Z)"»
+  «text (-10600,5750) 1 7 0 0x1000000 -1 -1 "ï»¿.param Vdc_Link= 400"»
+  «text (-10024,5600) 1 15 0 0x1000000 -1 -1 "ï»¿.param RLf=20m"»
+  «text (10950,2000) 1 7 0 0x1000000 -1 -1 "ï»¿.param L2_Q = 2000/3"»
+  «text (10950,1800) 1 7 0 0x1000000 -1 -1 "ï»¿.param L2_P= 4000/3"»
+  «text (11000,1150) 1 7 0 0x1000000 -1 -1 "ï»¿.param L2_R = 3.2604"»
+  «text (10950,2350) 1 7 1 0x1000000 -1 -1 "ï»¿Switch On: A 4470 VA, 0.8944PF lagging load"»
+  «text (10900,3250) 1 7 1 0x1000000 -1 -1 "ï»¿LOADS (Phase Power):"»
+  «text (10950,2900) 1 7 0 0x1000000 -1 -1 "ï»¿.param L1_P = 1000/3"»
+  «text (11000,3050) 1 7 1 0x1000000 -1 -1 "ï»¿Always On: A 1000W Load"»
+  «text (10950,2200) 1 7 0 0x1000000 -1 -1 "ï»¿.param t_switch = 100m"»
+  «text (11000,1550) 1 7 1 0x1000000 -1 -1 "ï»¿L = imag(Z)/2*pi*f"»
+  «text (11000,1400) 1 7 1 0x1000000 -1 -1 "ï»¿R = real(Z)"»
+  «text (11000,1000) 1 7 0 0x1000000 -1 -1 "ï»¿.param L2_L = 0.0745"»
+  «text (-950,7150) 1 7 0 0x1000000 -1 -1 "ï»¿.param tri_freq 20e3"»
+  «text (-950,7000) 1 7 0 0x1000000 -1 -1 "ï»¿.param tri_period 1/{tri_freq}"»
+  «text (-10600,6450) 1 7 0 0x1000000 -1 -1 "ï»¿.param Lf2= 370Âµ"»
+  «text (-10600,6250) 1 7 0 0x1000000 -1 -1 "ï»¿.param Cf = 200Âµ"»
+  «text (-950,7750) 1 7 1 0x1000000 -1 -1 "ï»¿grid_omega"»
+  «text (-950,7600) 1 7 1 0x1000000 -1 -1 "ï»¿v_pu_set"»
+  «text (-950,8150) 1 7 1 0x1000000 -1 -1 "ï»¿TO model without droop control, set v_pu_set and omega_set to "»
+  «text (-950,8000) 1 7 1 0x1000000 -1 -1 "ï»¿w_grid and v_unity repectively."»
+  «text (-10600,7850) 1 7 1 0x1000000 -1 -1 "ï»¿Ideal Switches"»
+  «text (-10550,7250) 1 7 1 0x1000000 -1 -1 "ï»¿Ideal Switches"»
+  «text (-950,7300) 1 7 0 0x1000000 -1 -1 "ï»¿.param clk_SPWM_freq 50e3"»
 »
 

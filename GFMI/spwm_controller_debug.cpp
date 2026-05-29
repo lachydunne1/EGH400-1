@@ -5,19 +5,17 @@
 //    dmc -mn -WD spwm_controller_debug.cpp kernel32.lib
 #include <cmath>
 
+static bool clk_state = false; // Initialize clk_state correctly
+static double triangle_wave(double t);
+
 struct PwmLeg {
-   double carrier_period; // Triangle wave period
    double gain;           // Scaling gain
    double offset;         // phase shift or m3 offset
    double amplitude;      // amplitude
    double time;           // sim time
 
    //generate PWM high/low signals for a leg
-   double step(double reference, double *pa, double *pb){
-
-      //generate triangle carrier
-      double t_mod = fmod(time, carrier_period);
-      double carrier = triangle_wave(t_mod/carrier_period);
+   void step(double reference, double carrier, double *pa, double *pb){
 
       //compare ref against carrier and set PWM outputs
       if (reference >= carrier){
@@ -27,17 +25,11 @@ struct PwmLeg {
          *pa = 0;
          *pb = 1;
       }
-      return carrier;
-   }
-
-   // use SPWM
-   static double triangle_wave(double t){
-      double phase = fmod(t,1.0);
-      return (phase < 0.5) ? (phase*4 - 1) : (3 - phase*4);
    }
 
 
 };
+
 
 union uData
 {
@@ -75,6 +67,7 @@ int __stdcall DllMain(void *module, unsigned int reason, void *reserved) { retur
 #undef tri_out
 #undef sig_out
 
+
 extern "C" __declspec(dllexport) void spwm_controller_debug(void **opaque, double t, union uData *data)
 {
    double  c       = data[ 0].d; // input
@@ -95,40 +88,50 @@ extern "C" __declspec(dllexport) void spwm_controller_debug(void **opaque, doubl
 
 // Implement module evaluation code here:
 
-   float period = 1/Fsw;
+   float carrier_period = 1/Fsw;
    float pi = 3.141592654;
    float phase_shift  =(2*pi)/3;
-   float carrier_a = 0;
-   float carrier_b = 0;
-   float carrier_c = 0;
 
    PwmLeg PWM_LEGA;
-   PWM_LEGA.carrier_period = period;
    PWM_LEGA.gain = 1.0;
    PWM_LEGA.offset = 0.0;
    PWM_LEGA.amplitude = 1.0;
    PWM_LEGA.time = time;
 
-
    PwmLeg PWM_LEGB;
-   PWM_LEGB.carrier_period = period;
    PWM_LEGB.gain = 1.0;
    PWM_LEGB.offset = 0;
    PWM_LEGB.amplitude = 1.0;
    PWM_LEGB.time = time;
 
    PwmLeg PWM_LEGC;
-   PWM_LEGC.carrier_period = period;
    PWM_LEGC.gain = 1.0;
    PWM_LEGC.offset = 0;
    PWM_LEGC.amplitude = 1.0;
    PWM_LEGC.time = time;
 
-   carrier_a = PWM_LEGA.step(a/Norm, &p1a, &p1b);
-   carrier_b = PWM_LEGB.step(b/Norm, &p2a, &p2b);
-   carrier_c = PWM_LEGC.step(c/Norm, &p3a, &p3b);
-
+   //generate triangle carrier
+   double t_mod = fmod(time, carrier_period);
+   double carrier = triangle_wave(t_mod/carrier_period);
    sig_out = a/Norm;
-   tri_out = carrier_a;
+   tri_out = carrier;
 
+   if (CLK == false || CLK == clk_state) goto end;
+
+   PWM_LEGA.step(a/Norm, carrier, &p1a, &p1b);
+   PWM_LEGB.step(b/Norm, carrier, &p2a, &p2b);
+   PWM_LEGC.step(c/Norm, carrier, &p3a, &p3b);
+
+   end:
+      clk_state = CLK;
+
+
+
+
+}
+
+// use SPWM
+static double triangle_wave(double t){
+     double phase = fmod(t,1.0);
+     return (phase < 0.5) ? (phase*4 - 1) : (3 - phase*4);
 }

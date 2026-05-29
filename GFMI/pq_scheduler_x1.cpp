@@ -1,10 +1,10 @@
-// Automatically generated C++ file on Sat Apr 11 15:13:49 2026
+// Automatically generated C++ file on Sun May 24 17:55:08 2026
 //
 // To build with Digital Mars C++ Compiler:
 //
 //    dmc -mn -WD pq_scheduler_x1.cpp kernel32.lib
-
 #include <cmath>
+
 union uData
 {
    bool b;
@@ -22,7 +22,20 @@ union uData
    unsigned char *bytes;
 };
 
-void PQ_load_step(double P_in, double Q_in, double *P_out, double *Q_out);
+#undef time
+#undef P
+#undef Q
+
+double sqrt_3 = 1.73;
+double P_current = 0.0;
+double Q_current = 0.0;
+
+
+static bool L1_done = false;
+static bool L2_done = false;
+
+
+void PQ_load_step(double P_in, double Q_in, double Q_rated, double P_rated, double *P_out, double *Q_out);
 
 // int DllMain() must exist and return 1 for a process to load the .DLL
 // See https://docs.microsoft.com/en-us/windows/win32/dlls/dllmain for more information.
@@ -33,24 +46,19 @@ int __stdcall DllMain(void *module, unsigned int reason, void *reserved) { retur
 #undef P
 #undef Q
 
-double sqrt_3 = 1.73;
-double P_current = 0.0;
-double Q_current = 0.0;
-
-static bool L1_done = false;
-static bool L2_done = false;
-
 extern "C" __declspec(dllexport) void pq_scheduler_x1(void **opaque, double t, union uData *data)
 {
-   double  time    = data[0].d; // input
-   double  time_L1 = data[1].d; // input parameter
-   double  time_L2 = data[2].d; // input parameter
-   double  L1_P    = data[3].d; // input parameter
-   double  L1_Q    = data[4].d; // input parameter
-   double  L2_P    = data[5].d; // input parameter
-   double  L2_Q    = data[6].d; // input parameter
-   double &P       = data[7].d; // output
-   double &Q       = data[8].d; // output
+   double  time    = data[ 0].d; // input
+   double  time_L1 = data[ 1].d; // input parameter
+   double  time_L2 = data[ 2].d; // input parameter
+   double  L1_P    = data[ 3].d; // input parameter
+   double  L1_Q    = data[ 4].d; // input parameter
+   double  L2_P    = data[ 5].d; // input parameter
+   double  L2_Q    = data[ 6].d; // input parameter
+   double  Q_rated = data[ 7].d; // input parameter
+   double  P_rated = data[ 8].d; // input parameter
+   double &P       = data[ 9].d; // output
+   double &Q       = data[10].d; // output
 
 // Implement module evaluation code here:
 //should only execute once.
@@ -66,11 +74,11 @@ extern "C" __declspec(dllexport) void pq_scheduler_x1(void **opaque, double t, u
       L2_done = true;
    }
 
-  PQ_load_step(P_current, Q_current, &P, &Q);
+  PQ_load_step(P_current, Q_current, P_rated, Q_rated, &P, &Q);
 
 }
 
-void PQ_load_step(double P_in, double Q_in, double *P_out, double *Q_out){
-   *P_out = P_in;
-   *Q_out = Q_in;
+void PQ_load_step(double P_in, double Q_in, double Q_rated, double P_rated, double *P_out, double *Q_out){
+   *P_out = P_in/P_rated;
+   *Q_out = Q_in/Q_rated;
 }
